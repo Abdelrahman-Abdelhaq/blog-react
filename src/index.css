@@ -9,7 +9,7 @@
     display: flex;
     /* display: none; */
     margin: 150px 208px 0px 180px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .login-left-subcontainer{
