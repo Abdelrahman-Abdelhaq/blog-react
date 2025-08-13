@@ -1,6 +1,8 @@
+import { useState } from "react";
 import signup from "../assets/signup.svg"
 
 const Signup = ()=>{
+    const [isPassword,setIsPassword] = useState("password")
     return(
         <>
         <div className="signup-desktop-main-div">
@@ -22,8 +24,11 @@ const Signup = ()=>{
                 </div>
                 <div className="signup-desktop-password-div">
                     <p className="signup-desktop-password-p">Password</p>
-                    <input type="password" className="signup-desktop-password-input" placeholder="enter your password"/>
-                    <button className="signup-desktop-password-btn"></button>
+                    <input type={isPassword} className="signup-desktop-password-input" placeholder="enter your password"/>
+                    <button className="signup-desktop-password-btn" onClick={()=>{
+                        if(isPassword ==="password") setIsPassword("text")
+                        if(isPassword ==="text") setIsPassword("password")
+                    }}></button>
                 </div>
                 <div className="signup-desktop-signup-div">
                     <button className="signup-desktop-signup-btn">Sign up</button>
