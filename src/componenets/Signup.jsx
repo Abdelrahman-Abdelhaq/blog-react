@@ -7,7 +7,7 @@ const Signup = ()=>{
         <>
         <div className="signup-desktop-main-div">
             <div className="signup-dektop-left-div">
-                <img src={signup} alt="sign-up pic" />
+                <img src={signup} alt="sign-up-pic" className="signup-desktop-pic" />
             </div>
             <div className="signup-desktop-right-div">
                 <div className="signup-desktop-title-div">

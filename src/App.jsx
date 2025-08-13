@@ -4,8 +4,8 @@ import Signup from "./componenets/Signup.jsx";
 function App() {
 
   return (
-     <Signup/>
-    // <Login/>
+    //  <Signup/>
+    <Login/>
   );
 }
 

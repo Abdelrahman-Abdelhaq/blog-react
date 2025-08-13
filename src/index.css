@@ -1,6 +1,7 @@
 #root,html,body{
     box-sizing: border-box;
-    margin: 0 auto; 
+    margin: 0;
+    width: 1728px;
 }
 /* Sign-In CSS Code for Both Dekstop and Mobile */
 .dektop-login-main-container{
@@ -9,7 +10,7 @@
     box-sizing: border-box;
     display: flex;
     /* display: none; */
-    margin: 150px 0px 0px 88px;
+    margin: 150px 0px 0px 160px;
     padding-right: 208px;
 }
 
@@ -110,6 +111,7 @@
     position: absolute;
     right: 10px;
     top: 282px;
+    background-color: white;
 }
 .login-forget-pass-div{
     width: 450px;
@@ -169,6 +171,7 @@
     background-repeat: no-repeat;
     background-size: 24px 24px;
     background-position: left 100px top 14px;
+    background-color: white;
 }
 .login-no-account-div{
     margin-top: 32px;
@@ -274,6 +277,7 @@
     background-size: 24px 24px;
     top: 310px;
     left: 350px;
+    background-color: white;
 }
 .mobile-login-forgot-div{
     margin-top: 16px;
@@ -333,6 +337,7 @@
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    background-color: white;
 }
 .mobile-login-signup-div{
     display: flex;
@@ -352,6 +357,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #6E6CDF;
+    background-color: white;
 }
 
 /* Sign-Up CSS Code for Dektop and Mobile */
@@ -359,16 +365,20 @@
 .signup-desktop-main-div{
     width: 1434px;
     height: 800px;
-    margin: 110px 0px 40px 88px;
+    margin: 110px 0px 40px 160px;
     display: flex;
-    padding-right: 208px;
+    /* padding-right: 208px; */
     justify-content: center;
     
 }
 .signup-dektop-left-div{
     width: 700px;
     height: 700px;
-    margin-right: 294px;
+    margin-right: 290px;
+}
+.signup-desktop-pic{
+    width: 690px;
+    height: 700px;
 }
 .signup-desktop-right-div{
     width: 450px;
@@ -476,8 +486,10 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    background-size: 20px 20px;
     bottom: 34px;
     left: 416px;
+    background-color: white;
 }
 .signup-desktop-signup-div{
     margin-top: 44px;
@@ -494,6 +506,7 @@
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    background-color: white;
 }
 .signup-desktop-or-div{
     margin-top: 24px;
@@ -528,6 +541,7 @@
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    background-color: white;
 }
 .signup-desktop-signin-div{
     margin-top: 32px;
