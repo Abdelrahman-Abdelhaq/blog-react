@@ -1,5 +1,5 @@
 import { useState } from "react";
-import login_phone from "../assets/prototype.svg"
+import signin from "../assets/signin.svg"
 
 const Login = ()=> {
     const [isPassword,setIsPassword] = useState("password");
@@ -7,7 +7,7 @@ const Login = ()=> {
         <>
             <div className="dektop-login-main-container">
                 <div className="login-left-subcontainer">
-                    <img src={login_phone} alt="Phono Prototype" className="login-phone-pic" />
+                    <img src={signin} alt="Phono Prototype" className="login-phone-pic" />
                 </div>
                 <div className="login-right-subcontainer">
                     <div className="login-title-div">

@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0 auto; 
 }
+/* Sign-In CSS Code for Both Dekstop and Mobile */
 .dektop-login-main-container{
     width: 1640px;
     height: 700px;
@@ -351,4 +352,203 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #6E6CDF;
+}
+
+/* Sign-Up CSS Code for Dektop and Mobile */
+
+.signup-desktop-main-div{
+    width: 1434px;
+    height: 800px;
+    margin: 110px 0px 40px 88px;
+    display: flex;
+    padding-right: 208px;
+    justify-content: center;
+    
+}
+.signup-dektop-left-div{
+    width: 700px;
+    height: 700px;
+    margin-right: 294px;
+}
+.signup-desktop-right-div{
+    width: 450px;
+    height: 770px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-desktop-title-div{
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+}
+.signup-desktop-title-p{
+    color: #424242;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.signup-desktop-request-p{
+    color: #BDBDBD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+.signup-desktop-name-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 450px;
+    height: 96px;
+    margin-top: 48px;
+}
+.signup-desktop-name-p{
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.signup-desktop-name-input{
+    border: none;
+    outline: #BDBDBD 1px solid;
+    border-radius: 16px;
+    padding-left: 20px;
+    width: 428px;
+    height: 54px;
+}
+.signup-desktop-email-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 32px;
+    width: 450px;
+    height: 96;
+}
+.signup-desktop-email-p{
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.signup-desktop-email-input{
+    border: none;
+    outline: #6E6CDF 1px solid;
+    border-radius: 16px;
+    width: 428px;
+    height: 54px;
+    padding-left: 20px;
+}
+.signup-desktop-password-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 32px;
+    width: 450px;
+    height: 96;
+}
+
+.signup-desktop-password-p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.signup-desktop-password-input{
+    border: none;
+    outline: #BDBDBD 1px solid;
+    border-radius: 16px;
+    width: 428px;
+    height: 54px;
+    padding-left: 20px;
+}
+.signup-desktop-password-btn{
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-image: url(./assets/password-eye.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 34px;
+    left: 416px;
+}
+.signup-desktop-signup-div{
+    margin-top: 44px;
+    width: 450px;
+    height: 58px;
+}
+.signup-desktop-signup-btn{
+    width: 450px;
+    height: 58px;
+    border: none;
+    background-color: #6E6CDF;
+    border-radius: 16px;
+    color: white;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-desktop-or-div{
+    margin-top: 24px;
+    width: 150px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-desktop-or-p{
+    margin: 0;
+    font-size: 16px;
+    color: #BDBDBD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-desktop-google-div{
+    margin-top: 26px;
+    width: 450px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup-desktop-google-btn{
+    width: 450px;
+    height: 56px;
+    border: none;
+    background-image: url("./assets/google.svg");
+    background-repeat: no-repeat;
+    background-position: left 100px top 14px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-desktop-signin-div{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: baseline;
+    width: 450px;
+    height: 26px;
+    justify-content: center;
+}
+.signup-desktop-signin-p{
+    margin: 0;
+    font-size: 16px;
+    color: #BDBDBD;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-desktop-signin-btn{
+    border: none;
+    color: #6E6CDF;
+    font-weight: bold;
+    font-size: 16px;
 }
