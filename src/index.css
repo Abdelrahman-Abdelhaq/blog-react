@@ -1,15 +1,15 @@
 #root,html,body{
     box-sizing: border-box;
     margin: 0;
-    width: 1728px;
+    width: auto;
 }
 /* Sign-In CSS Code for Both Dekstop and Mobile */
 .dektop-login-main-container{
     width: 1640px;
     height: 700px;
     box-sizing: border-box;
-    display: flex;
-    /* display: none; */
+    /* display: flex; */
+    display: none;
     margin: 150px 0px 0px 160px;
     padding-right: 208px;
 }
@@ -201,13 +201,15 @@
 }
 
 
-/* Mobile CSS Code */
+/* Mobile Login CSS Code */
 
 .mobile-login-main-container{
     width: 400px;
     height: 780px;
     padding: 24px;
-    display: none;
+    /* display: none; */
+    /* display: flex;
+    flex-direction: column; */
 }
 .mobile-login-title-div{
     display: flex;
@@ -352,6 +354,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: baseline;
     gap: 10px;
 }
 .mobile-login-signup-p{
@@ -371,15 +374,15 @@
 }
 
 /* Sign-Up CSS Code for Dektop and Mobile */
-
+/* Signup Dekstop Code */
 .signup-desktop-main-div{
     width: 1434px;
     height: 800px;
     margin: 110px 0px 40px 160px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     /* padding-right: 208px; */
     justify-content: center;
-    
 }
 .signup-dektop-left-div{
     width: 700px;
@@ -573,6 +576,7 @@
     font-weight: bold;
 }
 .signup-desktop-signin-btn{
+    cursor: pointer;
     border: none;
     color: #6E6CDF;
     font-weight: 800;
@@ -580,4 +584,190 @@
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
+}
+/* Signup Mobile Code */
+.signup-mobile-main-div{
+    width: 344px;
+    height: 850px;
+    padding-right: 24px;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.signup-mobile-title-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 80px;
+}
+.signup-mobile-title-p{
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #424242;
+    margin: 0;
+}
+.signup-mobile-request-p{
+    margin-top: 12px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+    margin-bottom: 0;
+}
+.signup-mobile-name-div{
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 344px;
+}
+.signup-mobile-name-p{
+    color: #424242;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin:0;
+}
+.signup-mobile-name-input{
+    margin-top: 16px;
+    width: 316px;
+    height: 52px;
+    border: none;
+    border-radius: 16px;
+    outline: 1px solid #BDBDBD;
+    padding-left: 24px;
+}
+.signup-mobile-email-div{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.signup-mobile-email-p{
+    color: #424242;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+.signup-mobile-email-input{
+    margin-top: 16px;
+    width: 316px;
+    height: 52px;
+    padding-left: 24px;
+    border: none;
+    border-radius: 16px;
+    outline: 1px solid #6E6CDF;
+}
+.signup-mobile-password-div{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.signup-mobile-password-p{
+    margin: 0;
+    color: #424242;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-mobile-password-input{
+    width: 316px;
+    height: 52px;
+    border: none;
+    outline: 1px solid #BDBDBD;
+    border-radius: 16px;
+    padding-left: 24px;
+    margin-top: 16px;
+}
+.signup-mobile-password-btn{
+    cursor: pointer;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: white;
+    background-image: url(./assets/password-eye.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 34px;
+    left: 310px;
+}
+.signup-mobile-signup-div{
+    margin-top: 100px;
+    width: 344px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.signup-mobile-signup-btn{
+    cursor: pointer;
+    width: 344px;
+    height: 50px;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    background-color: #6E6CDF;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-mobile-or-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.signup-mobile-or-p{
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+}
+.signup-mobile-google-div{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 344px;
+    height: 56px;
+}
+.signup-mobile-google-btn{
+    cursor: pointer;
+    width: 344px;
+    height: 56px;
+    color: #424242;
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-image: url("./assets/google.svg");
+    background-position: top 15px left 58px;
+    background-repeat: no-repeat;
+}
+.signup-mobile-signin-div{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+.signup-mobile-signin-p{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+}
+.signup-mobile-signin-btn{
+    cursor: pointer;
+    border: none;
+    color: #6E6CDF;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
 }

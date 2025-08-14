@@ -47,7 +47,39 @@ const Signup = ()=>{
             </div>
         </div>
         <div className="signup-mobile-main-div">
-
+                <div className="signup-mobile-title-div">
+                    <p className="signup-mobile-title-p">Join us Now!!</p>
+                    <p className="signup-mobile-request-p">Let's Create your account</p>
+                </div>
+                <div className="signup-mobile-name-div">
+                    <p className="signup-mobile-name-p">Full Name</p>
+                    <input type="text"  className="signup-mobile-name-input" placeholder="enter your name"/>
+                </div>
+                <div className="signup-mobile-email-div">
+                    <p className="signup-mobile-email-p">Email</p>
+                    <input type="email" className="signup-mobile-email-input" placeholder="admin@gmail.com" />
+                </div>
+                <div className="signup-mobile-password-div">
+                    <p className="signup-mobile-password-p">Password</p>
+                    <input type={isPassword} className="signup-mobile-password-input" placeholder="enter your password"/>
+                    <button className="signup-mobile-password-btn" onClick={()=>{
+                        if(isPassword ==="password") setIsPassword("text")
+                        if(isPassword ==="text") setIsPassword("password")
+                    }}></button>
+                </div>
+                <div className="signup-mobile-signup-div">
+                    <button className="signup-mobile-signup-btn">Sign up</button>
+                </div>
+                <div className="signup-mobile-or-div">
+                    <p className="signup-mobile-or-p">OR</p>
+                </div>
+                <div className="signup-mobile-google-div">
+                    <button className="signup-mobile-google-btn">Continue with Google</button>
+                </div>
+                <div className="signup-mobile-signin-div">
+                    <p className="signup-mobile-signin-p">Already have an Account!?</p>
+                    <Link to={"/"}><button className="signup-mobile-signin-btn">Sign-in</button></Link>
+                </div>
         </div>
         </>
     );

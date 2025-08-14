@@ -82,7 +82,7 @@ const Login = ()=> {
                 </div>
                 <div className="mobile-login-signup-div">
                         <p className="mobile-login-signup-p">Don't have an account? </p>
-                        <button className="mobile-login-signup-btn">Sign-up</button>
+                        <Link to={"/signup"}><button className="mobile-login-signup-btn">Sign-up</button></Link>
                 </div>
             </div>
         </>
