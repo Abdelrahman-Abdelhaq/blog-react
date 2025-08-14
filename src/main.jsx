@@ -8,11 +8,16 @@ import Signup from './componenets/Signup.jsx'
 const Router = createBrowserRouter([
     {
       path:'/',
-      element: <Login/>
+      element: <Login/>,
+      errorElement: <Login/>
     },
     {
       path:'/signup',
       element: <Signup/>
+    },
+    {
+      path:"*",
+      element: <Login/>
     }
   ])
 createRoot(document.getElementById('root')).render(
