@@ -1,0 +1,384 @@
+/* Signup Mobile Code */
+/* ......................... */
+.signup-mobile-main-div{
+    width: 344px;
+    height: 770px;
+    margin: 60px 24px 0 24px;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+}
+.signup-mobile-title-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.signup-mobile-title-p{
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #424242;
+    margin: 0;
+}
+.signup-mobile-request-p{
+    margin-top: 12px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+    margin-bottom: 0;
+}
+.signup-mobile-name-div{
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 344px;
+}
+.signup-mobile-name-p{
+    color: #424242;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin:0;
+}
+.signup-mobile-name-input{
+    margin-top: 16px;
+    width: 316px;
+    height: 52px;
+    border: none;
+    border-radius: 16px;
+    outline: 1px solid #BDBDBD;
+    padding-left: 24px;
+}
+.signup-mobile-email-div{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.signup-mobile-email-p{
+    color: #424242;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+.signup-mobile-email-input{
+    margin-top: 16px;
+    width: 316px;
+    height: 52px;
+    padding-left: 24px;
+    border: none;
+    border-radius: 16px;
+    outline: 1px solid #6E6CDF;
+}
+.signup-mobile-password-div{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.signup-mobile-password-p{
+    margin: 0;
+    color: #424242;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-mobile-password-input{
+    width: 316px;
+    height: 52px;
+    border: none;
+    outline: 1px solid #BDBDBD;
+    border-radius: 16px;
+    padding-left: 24px;
+    margin-top: 16px;
+}
+.signup-mobile-password-btn{
+    cursor: pointer;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: white;
+    background-image: url(./assets/password-eye.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 34px;
+    left: 310px;
+}
+.signup-mobile-signup-div{
+    margin-top: 100px;
+    width: 344px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.signup-mobile-signup-btn{
+    cursor: pointer;
+    width: 344px;
+    height: 50px;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    background-color: #6E6CDF;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.signup-mobile-or-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.signup-mobile-or-p{
+    margin: 0;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+}
+.signup-mobile-google-div{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 344px;
+    height: 56px;
+}
+.signup-mobile-google-btn{
+    cursor: pointer;
+    width: 344px;
+    height: 56px;
+    color: #424242;
+    background-color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-image: url("./assets/google.svg");
+    background-position: top 15px left 58px;
+    background-repeat: no-repeat;
+}
+.signup-mobile-signin-div{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+.signup-mobile-signin-p{
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+}
+.signup-mobile-signin-btn{
+    cursor: pointer;
+    border: none;
+    color: #6E6CDF;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    background-color: white;
+}
+/* .................... */
+
+/* Mobile Login CSS Code */
+
+.mobile-login-main-container {
+    width: 344px;
+    height: 770px;
+    margin: 60px 24px 0px 24px;
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.mobile-login-title-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-login-title-p {
+    margin-top: 0;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #424242;
+    margin-bottom: 12px;
+}
+
+.mobile-login-request-p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #BDBDBD;
+    margin: 0;
+}
+
+.mobile-login-email-div {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.mobile-login-email-p {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mobile-login-email-input {
+    border: none;
+    outline: 1px solid #6E6CDF;
+    border-radius: 18px;
+    padding-left: 12px;
+    width: 332px;
+    height: 52px;
+    padding-right: 0;
+}
+
+.mobile-login-password-div {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.mobile-login-password-p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.mobile-login-password-input {
+    width: 332px;
+    height: 52px;
+    border: none;
+    outline: #BDBDBD 1px solid;
+    border-radius: 18px;
+    padding-left: 12px;
+    padding-right: 0;
+}
+
+.mobile-login-password-eye {
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    width: 24px;
+    height: 24px;
+    background-image: url("./assets/password-eye.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    top: 344px;
+    left: 328px;
+    background-color: white;
+}
+
+.mobile-login-forgot-div {
+    margin-top: 16px;
+    display: flex;
+    justify-content: end;
+}
+
+.mobile-login-forgot-btn {
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #6E6CDF;
+    background-color: white;
+}
+
+.mobile-login-signin-div {
+    margin-top: 162px;
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-login-sigin-btn {
+    cursor: pointer;
+    width: 346px;
+    height: 50px;
+    border: none;
+    background-color: #6E6CDF;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+.mobile-login-or-div {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-login-or-p {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BDBDBD;
+    margin: 0;
+}
+
+.mobile-login-google-div {
+    margin-bottom: 24px;
+    width: 344px;
+    height: 56px;
+}
+
+.mobile-login-google-btn {
+    text-align: center;
+    cursor: pointer;
+    background-image: url("./assets/google.svg");
+    background-repeat: no-repeat;
+    background-position: left 60px top 14px;
+    width: 344px;
+    height: 56px;
+    border: none;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: white;
+}
+
+.mobile-login-signup-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.mobile-login-signup-p {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #BDBDBD;
+    margin: 0;
+}
+
+.mobile-login-signup-btn {
+    cursor: pointer;
+    border: none;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: #6E6CDF;
+    background-color: white;
+}
+
