@@ -4,8 +4,10 @@
     width: fit-content;
     height: fit-content;
     overflow: hidden;
+    padding: 0;
 }
-/* Sign-In CSS Code for Both Dekstop and Mobile */
+/* Sign-In CSS Code */
+/* Sign-In Desktop CSS Code */
 .dektop-login-main-container{
     width: 1640px;
     height: 700px;
@@ -206,12 +208,12 @@
 /* Mobile Login CSS Code */
 
 .mobile-login-main-container{
-    width: 400px;
-    height: 780px;
-    padding: 24px;
+    width: 344px;
+    height: 770px;
+    margin: 60px 24px 0px 24px;
     /* display: none; */
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
 }
 .mobile-login-title-div{
     display: flex;
@@ -249,7 +251,7 @@
     outline: 1px solid #6E6CDF;
     border-radius: 18px;
     padding-left: 12px;
-    width: 345px;
+    width: 332px;
     height: 52px;
     padding-right: 0;
 }
@@ -266,7 +268,7 @@
     margin-top: 0;
 }
 .mobile-login-password-input{
-    width: 345px;
+    width: 332px;
     height: 52px;
     border: none;
     outline: #BDBDBD 1px solid;
@@ -284,15 +286,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
-    top: 310px;
-    left: 350px;
+    top: 344px;
+    left: 328px;
     background-color: white;
 }
 .mobile-login-forgot-div{
     margin-top: 16px;
     display: flex;
     justify-content: end;
-    padding-right: 40px;
 }
 .mobile-login-forgot-btn{
     cursor: pointer;
@@ -332,22 +333,23 @@
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
     color: #BDBDBD;
+    margin: 0;
 }
 .mobile-login-google-div{
     margin-bottom: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 344px;
+    height: 56px;
 }
 .mobile-login-google-btn{
+    text-align: center;
     cursor: pointer;
     background-image: url("./assets/google.svg");
     background-repeat: no-repeat;
-    background-position: left 50px top 12px;
-    width: 345px;
-    height: 52px;
+    background-position: left 60px top 14px;
+    width: 344px;
+    height: 56px;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: white;
@@ -357,20 +359,22 @@
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 40px;
 }
 .mobile-login-signup-p{
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #BDBDBD;
+    margin: 0;
 }
 .mobile-login-signup-btn{
     cursor: pointer;
     border: none;
-    font-size: 16px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight: 800;
     color: #6E6CDF;
     background-color: white;
 }
