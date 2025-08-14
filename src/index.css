@@ -3,6 +3,8 @@
     margin: 0;
     width: auto;
     height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 /* Sign-In CSS Code for Both Dekstop and Mobile */
 .dektop-login-main-container{
