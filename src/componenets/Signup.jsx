@@ -1,5 +1,6 @@
 import { useState } from "react";
 import signup from "../assets/signup.svg"
+import { Link } from "react-router";
 
 const Signup = ()=>{
     const [isPassword,setIsPassword] = useState("password")
@@ -41,7 +42,7 @@ const Signup = ()=>{
                 </div>
                 <div className="signup-desktop-signin-div">
                     <p className="signup-desktop-signin-p">Already have an account!?</p>
-                    <button className="signup-desktop-signin-btn">Sign-in</button>
+                    <Link to={'/'}><button className="signup-desktop-signin-btn">Sign-in</button></Link>
                 </div>
             </div>
         </div>

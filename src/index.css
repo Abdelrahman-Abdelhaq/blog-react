@@ -96,10 +96,6 @@
     outline: solid 1px #BDBDBD;
     padding-left: 20px;
     height: 54px;
-    /* background-image: url("./assets/password-eye.svg");
-    background-position: right 10px top 20px;
-    background-repeat: no-repeat;
-    background-size: 20px 20px; */
 }
 .login-password-eye{
     border: none;
@@ -112,6 +108,7 @@
     right: 10px;
     top: 282px;
     background-color: white;
+    cursor: pointer;
 }
 .login-forget-pass-div{
     width: 450px;
@@ -123,6 +120,7 @@
 }
 
 .login-forget-btn{
+    cursor: pointer;
     border: none;
     color: #6E6CDF;
     font-weight: bold;
@@ -137,6 +135,7 @@
     justify-content: center;
 }
 .login-signin-btn{
+    cursor: pointer;
     width: 450px;
     border: none;
     color: white;
@@ -146,6 +145,7 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
+    cursor: pointer;
 }
 .login-or-div{
     margin-top: 24px;
@@ -162,6 +162,7 @@
     height: 56px;
 }
 .login-google-btn{
+    cursor: pointer;
     width: 450px;
     height: 56px;
     border: none;
@@ -187,6 +188,7 @@
     color: #BDBDBD;
 }
 .login-no-account-btn{
+    cursor: pointer;
     border: none;
     color: #6E6CDF;
     height: 26px;
@@ -269,6 +271,7 @@
     padding-right: 0;
 }
 .mobile-login-password-eye{
+    cursor: pointer;
     position: absolute;
     border: none;
     width: 24px;
@@ -288,6 +291,7 @@
     padding-right: 40px;
 }
 .mobile-login-forgot-btn{
+    cursor: pointer;
     border: none;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
@@ -301,6 +305,7 @@
     justify-content: center;
 }
 .mobile-login-sigin-btn{
+    cursor: pointer;
     width: 346px;
     height: 50px;
     border: none;
@@ -331,6 +336,7 @@
     align-items: center;
 }
 .mobile-login-google-btn{
+    cursor: pointer;
     background-image: url("./assets/google.svg");
     background-repeat: no-repeat;
     background-position: left 50px top 12px;
@@ -355,6 +361,7 @@
     color: #BDBDBD;
 }
 .mobile-login-signup-btn{
+    cursor: pointer;
     border: none;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -493,6 +500,7 @@
     bottom: 34px;
     left: 416px;
     background-color: white;
+    cursor: pointer;
 }
 .signup-desktop-signup-div{
     margin-top: 44px;
@@ -500,6 +508,7 @@
     height: 58px;
 }
 .signup-desktop-signup-btn{
+    cursor: pointer;
     width: 450px;
     height: 58px;
     border: none;
@@ -509,7 +518,6 @@
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    background-color: white;
 }
 .signup-desktop-or-div{
     margin-top: 24px;
@@ -545,6 +553,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: white;
+    cursor: pointer;
 }
 .signup-desktop-signin-div{
     margin-top: 32px;
@@ -566,7 +575,9 @@
 .signup-desktop-signin-btn{
     border: none;
     color: #6E6CDF;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 16px;
     background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }

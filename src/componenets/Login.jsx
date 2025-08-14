@@ -1,5 +1,6 @@
 import { useState } from "react";
 import signin from "../assets/signin.svg"
+import { Link } from "react-router";
 
 const Login = ()=> {
     const [isPassword,setIsPassword] = useState("password");
@@ -43,7 +44,7 @@ const Login = ()=> {
                     </div>
                     <div className="login-no-account-div">
                         <p className="login-no-account-p">Don't have an account? </p>
-                        <button className="login-no-account-btn">Sign-up</button>
+                        <Link to={'/signup'}><button className="login-no-account-btn">Sign-up</button></Link>
                     </div>  
                 </div>
             </div>
