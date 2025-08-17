@@ -5,7 +5,8 @@ import { Link } from "react-router";
 const Login = ()=> {
     const [isPassword,setIsPassword] = useState("password");
     return (
-            <div className="dektop-login-main-container">
+        
+                <div className="desktop-login-main-container">
                 <div className="login-left-subcontainer">
                     <img src={signin} alt="Phono Prototype" className="login-phone-pic" />
                 </div>
