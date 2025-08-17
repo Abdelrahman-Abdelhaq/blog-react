@@ -1,0 +1,228 @@
+#root,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+.dektop-login-main-container {
+    width: 1640px;
+    height: 700px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 150px 0px 0px 160px;
+    padding-right: 208px;
+}
+
+.login-left-subcontainer {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    margin-right: 280px;
+}
+
+.login-right-subcontainer {
+    position: relative;
+    width: 450px;
+    height: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-phone-pic {
+    width: 690px;
+    height: 700px;
+}
+
+.login-title-div {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.login-title {
+    color: #424242;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.login-title-mobile {
+    display: none;
+}
+
+.login-request {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #BDBDBD;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-email-div {
+    width: 450px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.login-email-p {
+    margin-top: 0;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #424242;
+    font-size: 18px;
+}
+
+.login-email-input {
+    width: 428px;
+    height: 54px;
+    border: none;
+    outline: #6E6CDFCC solid 1px;
+    border-radius: 16px;
+    padding-left: 20px;
+}
+
+.login-password-div {
+    width: 450px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.login-password-p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #424242;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+}
+
+.login-password-input {
+    width: 428px;
+    border: none;
+    border-radius: 16px;
+    outline: solid 1px #BDBDBD;
+    padding-left: 20px;
+    height: 54px;
+}
+
+.login-password-eye {
+    border: none;
+    background-image: url("./assets/password-eye.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    top: 282px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.login-forget-pass-div {
+    width: 450px;
+    height: 22px;
+    display: flex;
+    justify-content: end;
+    margin-top: 16px;
+    margin-bottom: 64px;
+}
+
+.login-forget-btn {
+    cursor: pointer;
+    border: none;
+    color: #6E6CDF;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+.login-signin-div {
+    width: 450px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-signin-btn {
+    cursor: pointer;
+    width: 450px;
+    border: none;
+    color: white;
+    background-color: #6E6CDF;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    cursor: pointer;
+}
+
+.login-or-div {
+    margin-top: 24px;
+}
+
+.login-or-p {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+}
+
+.login-google-div {
+    margin-top: 24px;
+    width: 450px;
+    height: 56px;
+}
+
+.login-google-btn {
+    cursor: pointer;
+    width: 450px;
+    height: 56px;
+    border: none;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    background-image: url("./assets/google.svg");
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: left 100px top 14px;
+    background-color: white;
+}
+
+.login-no-account-div {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.login-no-account-p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #BDBDBD;
+}
+
+.login-no-account-btn {
+    cursor: pointer;
+    border: none;
+    color: #6E6CDF;
+    height: 26px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    padding: 0;
+    background-color: white;
+}
