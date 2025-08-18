@@ -129,7 +129,8 @@
     display: flex;
     justify-content: end;
     margin-top: 16px;
-    margin-bottom: 64px;
+    height: 64px;
+    align-items: start;
 }
 
 .login-forget-btn {
@@ -147,6 +148,7 @@
     height: 58px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .login-signin-btn {
@@ -329,17 +331,23 @@ ___________________________________________ */
 .login-title-mobile {
     display: flex;
     text-align: start;
-    font-size: clamp(12px, 4vw, 24px);
+    font-size: clamp(12px, 5vw, 24px);
     font-family: Arial, Helvetica, sans-serif;
     color: #424242;
 }
 .login-request{
     text-align: start;
-    font-size: clamp(10px, 3vw, 24px);
+    font-size: clamp(10px, 4vw, 24px);
+}
+.login-email-p{
+    font-size: clamp(10px, 4vw, 24px);
 }
 .login-email-input{
     height: 26px;
     border-radius: 8px;
+}
+.login-password-p{
+    font-size: clamp(10px, 4vw, 24px);
 }
 .login-password-input{
     height: 26px;
@@ -353,6 +361,11 @@ ___________________________________________ */
 .login-signin-btn{
     height: 36px;
     border-radius: 10px;
+    font-size: clamp(10px, 4vw, 24px);
+    height: 100%;
+}
+.login-or-p{
+    font-size: clamp(10px, 4vw, 24px);
 }
 .login-google-btn {
     font-size: clamp(10px, 3vw, 24px);
@@ -360,9 +373,8 @@ ___________________________________________ */
     width: 50%;
 }
 .login-no-account-p{
-    font-size: clamp(10px, 1.6vw, 24px);
+    font-size: clamp(10px, 3vw, 24px);
 }
 .login-no-account-btn{
-    font-size: clamp(10px, 1.6vw, 24px);
-}
+    font-size: clamp(10px, 3vw, 24px);}
 }
