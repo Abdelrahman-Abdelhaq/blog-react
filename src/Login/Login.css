@@ -307,6 +307,9 @@ ___________________________________________ */
 /* Last Media Quert fot Mobiles */
 /* __________________________________________ */
 @media screen and (max-width:492px) {
+.login-right-subcontainer{
+    width: 90%;
+}
 .login-title-div{
     display: flex;
     width: 100%;
@@ -345,7 +348,7 @@ ___________________________________________ */
 .login-google-btn {
     font-size: clamp(10px, 3vw, 24px);
     background-size: 4% 90%;
-    width: 60%;
+    width: 50%;
 }
 .login-no-account-p{
     font-size: clamp(10px, 1.6vw, 24px);
