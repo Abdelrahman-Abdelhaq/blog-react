@@ -163,6 +163,7 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     cursor: pointer;
+    height: 54px;
 }
 
 .login-or-div {
@@ -253,7 +254,7 @@ _____________________________________________________
     width: 70%;
 }
 .login-title {
-    font-size: clamp(20px, 3.5vw, 50px);
+    font-size: clamp(20px, 4vw, 50px);
 }
 .login-request {
     font-size: clamp(10px, 1.5vw, 18px);
@@ -299,8 +300,11 @@ _____________________________________________________
 /* Second Media Query for tablets and IPADS
 ___________________________________________ */
 @media screen and (max-width:768px) {
+.login-title{
+    font-size: clamp(12px, 4vw, 30px);
+}
 .login-google-btn {
-    font-size: clamp(12px, 1.6vw, 24px);
+    font-size: clamp(12px, 2vw, 24px);
     background-size: 4% 90%;
     background-position: left 20% bottom 60%;
 }
