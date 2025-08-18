@@ -1,0 +1,356 @@
+#root{
+    width: 100vw;
+    height: 100vh;
+    justify-items: center;
+    align-content: center;
+}
+
+.desktop-login-main-container {
+    width: 80%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-left-subcontainer {
+    width: clamp(450px,50%,800px);
+    /* width: 50%; */
+    height: auto;
+}
+.login-phone-pic {
+    height: 700px;
+    width: 92.5%;
+}
+
+.login-right-subcontainer {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.login-title-div {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.login-title {
+    color: #424242;
+    font-weight: bold;
+    font-size: clamp(14px,2.2vw,50px);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.login-title-mobile {
+    display: none;
+}
+
+.login-request {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #BDBDBD;
+    font-weight: 400;
+    font-size: clamp(10px,1vw,18px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-email-div {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.login-email-p {
+    margin-top: 0;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #424242;
+    font-size: clamp(14px,1vw,24px);
+}
+
+.login-email-input {
+    width: 95%;
+    height: 54px;
+    border: none;
+    outline: #6E6CDFCC solid 1px;
+    border-radius: 16px;
+    padding-left: 4%;
+}
+
+.login-password-div {
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+}
+
+.login-password-p {
+    font-size: clamp(14px, 1vw, 24px);
+    font-weight: 500;
+    color: #424242;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+}
+
+.login-password-input {
+    width: 95%;
+    border: none;
+    border-radius: 16px;
+    outline: solid 1px #BDBDBD;
+    padding-left: 4%;
+    height: 54px;
+}
+
+.login-password-eye {
+    border: none;
+    background-image: url("../assets/password-eye.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 5%;
+    height: 24px;
+    position: absolute;
+    right: 26px;
+    bottom: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.login-forget-pass-div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 16px;
+    margin-bottom: 64px;
+}
+
+.login-forget-btn {
+    cursor: pointer;
+    border: none;
+    color: #6E6CDF;
+    font-weight: bold;
+    font-size: clamp(12px, .9vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+.login-signin-div {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-signin-btn {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #6E6CDF;
+    border-radius: 16px;
+    font-size: clamp(14px, 1vw, 24px);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    cursor: pointer;
+}
+
+.login-or-div {
+    margin-top: 24px;
+}
+
+.login-or-p {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #BDBDBD;
+    font-size: clamp(10px, 1vw, 18px);
+}
+
+.login-google-div {
+    margin-top: 24px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+.login-google-btn {
+    padding: 0;
+    cursor: pointer;
+    width: 50%;
+    height: 56px;
+    border: none;
+    font-size: clamp(11px, 1vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    background-color: white;
+}
+.login-google-logo-btn{
+    border: none;
+    background-color: white;
+    background-image: url("../assets/google.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 5%;
+    height: 50%;
+}
+.login-no-account-div {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    width: 100%;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.login-no-account-p {
+    font-size: clamp(12px, .9vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #BDBDBD;
+}
+
+.login-no-account-btn {
+    cursor: pointer;
+    border: none;
+    color: #6E6CDF;
+    height: 26px;
+    margin-top: 10px;
+    font-size: clamp(12px, .9vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    padding: 0;
+    background-color: white;
+}
+
+/* First Media Query for Medium Devices .............
+_____________________________________________________
+*/
+
+@media screen and (max-width:1024px) {
+.desktop-login-main-container {
+    justify-content: center;
+}
+.login-left-subcontainer {
+    display: none;
+}
+.login-right-subcontainer {
+    width: 70%;
+}
+.login-title {
+    font-size: clamp(20px, 3.5vw, 50px);
+}
+.login-request {
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+.login-email-p {
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+.login-password-p {
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+.login-forget-btn {
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+.login-signin-btn {
+    font-size: clamp(16px, 1.8vw, 24px);
+}
+.login-or-p {
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+.login-google-btn {
+    width: 46%;
+    font-size: clamp(14px, 2vw, 24px);
+}
+
+.login-google-logo-btn {
+    border: none;
+    background-color: white;
+    background-image: url("../assets/google.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 5%;
+    height: 50%;
+}
+.login-no-account-p {
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+.login-no-account-btn {
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+}
+
+/* Second Media Query for tablets and IPADS
+___________________________________________ */
+@media screen and (max-width:768px) {
+.login-google-btn {
+    font-size: clamp(12px, 1.6vw, 24px);
+    background-size: 4% 90%;
+    background-position: left 20% bottom 60%;
+}
+}
+
+/* Last Media Quert fot Mobiles */
+/* __________________________________________ */
+@media screen and (max-width:492px) {
+.login-title-div{
+    display: flex;
+    width: 100%;
+}
+.login-title {
+    display: none;
+}
+.login-title-mobile {
+    display: flex;
+    text-align: start;
+    font-size: clamp(12px, 4vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #424242;
+}
+.login-request{
+    text-align: start;
+    font-size: clamp(10px, 3vw, 24px);
+}
+.login-email-input{
+    height: 26px;
+    border-radius: 8px;
+}
+.login-password-input{
+    height: 26px;
+    border-radius: 8px;
+}
+.login-password-eye {
+    right: 16px;
+    bottom:2px;
+    background-size: 14px;
+}
+.login-signin-btn{
+    height: 36px;
+    border-radius: 10px;
+}
+.login-google-btn {
+    font-size: clamp(10px, 3vw, 24px);
+    background-size: 4% 90%;
+    width: 60%;
+}
+.login-no-account-p{
+    font-size: clamp(10px, 1.6vw, 24px);
+}
+.login-no-account-btn{
+    font-size: clamp(10px, 1.6vw, 24px);
+}
+}

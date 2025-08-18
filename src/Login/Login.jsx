@@ -13,7 +13,7 @@ const Login = ()=> {
                 <div className="login-right-subcontainer">
                     <div className="login-title-div">
                         <p className="login-title">Welcome Back</p>
-                        <p className="login-title-mobile">Hey, <br/>Welcome Back</p>
+                        <p className="login-title-mobile">Hey,<br/>Welcome Back</p>
                         <p className="login-request">Please login your account</p>
                     </div>
                     <div className="login-email-div">
@@ -41,6 +41,7 @@ const Login = ()=> {
                         <p className="login-or-p">OR</p>
                     </div>
                     <div className="login-google-div">
+                        <button className="login-google-logo-btn"></button>
                         <button className="login-google-btn">Continue with Google</button>
                     </div>
                     <div className="login-no-account-div">
