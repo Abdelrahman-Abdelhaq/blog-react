@@ -366,7 +366,7 @@ ___________________________________________ */
 }
 .login-signin-btn{
     height: 36px;
-    border-radius: 10px;
+    border-radius: 16px;
     font-size: clamp(10px, 4vw, 24px);
     height: 100%;
 }
