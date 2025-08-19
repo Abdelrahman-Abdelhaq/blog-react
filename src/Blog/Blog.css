@@ -1,0 +1,9 @@
+html,body{
+    margin: 0 auto;
+}
+.blog-main-div{
+    width: 90vw;
+    height: 100vh;
+    margin: auto;
+}
+

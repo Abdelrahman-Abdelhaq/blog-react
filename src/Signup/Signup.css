@@ -1,6 +1,13 @@
+html,
+body {
+    margin: 0;
+}
+
 .signup-desktop-main-div {
     box-sizing: border-box;
-    width: 80%;
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
     display: flex;
     justify-content: space-between;
 }

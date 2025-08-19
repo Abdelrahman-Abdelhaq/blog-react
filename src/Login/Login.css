@@ -1,14 +1,10 @@
-html,body,#root{
-    width: 100vw;
-    height: 100vh;
-    justify-items: center;
-    align-content: center;
-    margin: 0 auto;
-    overflow: hidden;
+html,body{
+    margin: 0;
 }
-
 .desktop-login-main-container {
-    width: 80%;
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -17,6 +13,8 @@ html,body,#root{
 .login-left-subcontainer {
     width: clamp(450px,45%,800px);
     height: auto;
+    display: flex;
+    align-items: center;
 }
 .login-phone-pic {
     height: 700px;
