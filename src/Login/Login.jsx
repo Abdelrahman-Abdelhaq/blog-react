@@ -1,6 +1,7 @@
 import { useState } from "react";
 import signin from "../assets/signin.svg"
 import { Link } from "react-router";
+import "./Login.css"
 
 const Login = ()=> {
     const [isPassword,setIsPassword] = useState("password");

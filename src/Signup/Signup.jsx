@@ -37,6 +37,7 @@ const Signup = ()=>{
                     <p className="signup-desktop-or-p">OR</p>
                 </div>
                 <div className="signup-desktop-google-div">
+                    <button className="signup-google-logo-btn"></button>
                     <button className="signup-desktop-google-btn">Continue with Google</button>
                 </div>
                 <div className="signup-desktop-signin-div">

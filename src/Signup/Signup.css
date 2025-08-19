@@ -1,10 +1,4 @@
-#root{
-    width: 100%;
-    height: 100%;
-    justify-items: center;
-    align-content: center;
-   
-}
+
 .signup-desktop-main-div {
     box-sizing: border-box;
     width: 80%;
@@ -178,289 +172,199 @@
 .........................
 .........................
 */
-.signup-desktop-google-btn {
+.signup-desktop-google-div {
+    margin-top: 24px;
     width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+.signup-google-logo-btn{
+    border: none;
+    background-color: white;
+    background-image: url("../assets/google.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 5%;
+    height: 50%;
+}
+.signup-desktop-google-btn {
+    padding: 0;
+    cursor: pointer;
+    width: 50%;
     height: 56px;
     border: none;
-    background-image: url("./assets/google.svg");
-    background-repeat: no-repeat;
-    background-position: left 100px top 14px;
-    font-size: 16px;
+    font-size: clamp(11px, 1vw, 24px);
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     background-color: white;
-    cursor: pointer;
 }
-
 .signup-desktop-signin-div {
     margin-top: 32px;
     display: flex;
     flex-direction: row;
-    gap: 8px;
-    align-items: baseline;
-    width: 450px;
-    height: 26px;
+    gap: 3%;
+    width: 100%;
     justify-content: center;
+    align-items: baseline;
 }
-
 .signup-desktop-signin-p {
-    margin: 0;
-    font-size: 16px;
+    font-size: clamp(12px, .9vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
     color: #BDBDBD;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
 }
-
 .signup-desktop-signin-btn {
-    cursor: pointer;
-    border: none;
-    color: #6E6CDF;
-    font-weight: 800;
-    font-size: 16px;
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-}
-
-@media screen and (max-width:480px) {
-.signup-desktop-main-div {
-        display: none;
-        width: 394px;
-        height: 852px;
-        box-sizing: border-box;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-
-    .signup-dektop-left-div {
-        display: none;
-        position: relative;
-        width: 394px;
-        height: 852px;
-        margin-right: 0px;
-    }
-
-    .signup-desktop-pic {
-        display: none;
-        width: 0px;
-        height: 0px;
-    }
-
-    .signup-desktop-right-div {
-        display: flex;
-        flex-direction: column;
-        width: 346px;
-        height: 752px;
-        margin: 60px 24px 40px 24px;
-    }
-
-    .signup-desktop-title-div {
-        display: flex;
-        flex-direction: column;
-        width: 346px;
-        text-align: start;
-    }
-
-    .signup-desktop-title-p {
-        display: inline;
-        color: #424242;
-        font-weight: bold;
-        font-size: 24px;
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-    }
-
-    .signup-desktop-request-p {
-        margin-top: 12px;
-        margin-bottom: 0;
-        color: #BDBDBD;
-        font-weight: bold;
-        font-size: 12px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .signup-desktop-name-div {
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        width: 346px;
-        height: 90px;
-        margin-top: 36px;
-    }
-
-    .signup-desktop-name-p {
-        color: #424242;
-        margin-top: 0px;
-        margin-bottom: 16px;
-        font-size: 16px;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .signup-desktop-name-input {
-        border: none;
-        outline: #BDBDBD 1px solid;
-        border-radius: 16px;
-        padding-left: 20px;
-        width: 320px;
-        height: 52px;
-    }
-
-    .signup-desktop-email-div {
-        width: 346px;
-        height: 90px;
-        margin-top: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-    }
-
-    .signup-desktop-email-p {
-        margin-top: 0;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #424242;
-        font-size: 16px;
-        margin-bottom: 16px;
-    }
-
-    .signup-desktop-email-input {
-        width: 320px;
-        height: 52px;
-        border: none;
-        outline: #6E6CDFCC solid 1px;
-        border-radius: 16px;
-        padding-left: 24px;
-    }
-
-    .signup-desktop-password-div {
-        width: 346px;
-        height: 90px;
-        margin-top: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-    }
-
-    .signup-desktop-password-p {
-        color: #424242;
-        margin-top: 0;
-        margin-bottom: 16px;
-        font-size: 16px;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .signup-desktop-password-input {
-        width: 320px;
-        height: 52px;
-        border: none;
-        border-radius: 16px;
-        outline: solid 1px #BDBDBD;
-        padding: 0 0 0 24px;
-    }
-
-    .signup-desktop-password-btn {
-        width: 20px;
-        height: 20px;
-        border: none;
-        background-image: url(./assets/password-eye.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        position: absolute;
-        background-size: 20px 20px;
-        top: 420px;
-        left: 330px;
-        background-color: white;
-        cursor: pointer;
-    }
-
-    .signup-desktop-signup-div {
-        margin-top: 100px;
-        width: 346px;
-        height: 50px;
-    }
-
-    .signup-desktop-signup-btn {
-        cursor: pointer;
-        width: 346px;
-        height: 50px;
-        border: none;
-        background-color: #6E6CDF;
-        border-radius: 16px;
-        color: white;
-        font-size: 18px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        padding: 0;
-    }
-
-    .signup-desktop-or-div {
-        margin-top: 24px;
-        margin-bottom: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 346px;
-    }
-
-    .signup-desktop-or-p {
-        margin: 0px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        color: #BDBDBD;
-        font-size: 14px;
-    }
-
-    .signup-desktop-google-div {
-        width: 346px;
-        height: 56px;
-        margin: 0;
-    }
-
-    .signup-desktop-google-btn {
-        cursor: pointer;
-        width: 346px;
-        height: 56px;
-        border: none;
-        font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        background-image: url("./assets/google.svg");
-        background-repeat: no-repeat;
-        background-size: 24px 24px;
-        background-position: left 64px top 14px;
-        background-color: white;
-    }
-
-    .signup-desktop-signin-div {
-        margin-top: 24px;
-        margin-bottom: 24px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: baseline;
-        gap: 8px;
-    }
-
-    .signup-desktop-signin-p {
-        font-size: 12px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        color: #BDBDBD;
-        margin: 0;
-    }
-
-    .signup-desktop-signin-btn {
         cursor: pointer;
         border: none;
         color: #6E6CDF;
         height: 26px;
-        font-size: 12px;
+        margin-top: 10px;
+        font-size: clamp(12px, .9vw, 24px);
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 800;
         padding: 0;
         background-color: white;
+}
+
+/* First Media Query for Medium Devices .............
+_____________________________________________________
+*/
+
+@media screen and (max-width:1024px) {
+.signup-desktop-main-div {
+    justify-content: center;
+}
+.signup-dektop-left-div{
+    display: none;
+}
+.signup-desktop-right-div {
+    width: 70%;
+}
+.signup-desktop-title-p {
+    font-size: clamp(20px, 4vw, 50px);
+}
+.signup-desktop-request-p{
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+.signup-desktop-name-p{
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+.signup-desktop-email-p {
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+.signup-desktop-password-p {
+    font-size: clamp(12px, 1.5vw, 24px);
+}
+.signup-desktop-signup-btn {
+    font-size: clamp(16px, 1.8vw, 24px);
+}
+.signup-desktop-or-p {
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+.signup-desktop-google-btn {
+    width: 46%;
+    font-size: clamp(14px, 2vw, 24px);
+}
+.signup-desktop-signin-p {
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+.signup-desktop-signin-btn {
+    font-size: clamp(12px, 1.5vw, 18px);
+}
+}
+
+/* Second Media Query for tablets and IPADS
+___________________________________________ */
+@media screen and (max-width:768px) {
+    .signup-desktop-title-p {
+        font-size: clamp(12px, 4vw, 30px);
     }
+
+    .signup-desktop-google-btn {
+        font-size: clamp(12px, 2vw, 24px);
+        background-size: 4% 90%;
+        background-position: left 20% bottom 60%;
+    }
+}
+
+/* Last Media Quert fot Mobiles */
+/* __________________________________________ */
+@media screen and (max-width:492px) {
+#root {
+    align-content: normal;
+}
+.signup-desktop-main-div {
+    margin-top: 30px;
+    justify-self: start;
+    width: 100%;
+}
+.signup-desktop-right-div {
+    width: 90%;
+}
+.signup-desktop-title-div {
+    display: flex;
+    width: 100%;
+}
+.signup-desktop-title-p {
+    display: flex;
+    text-align: start;
+    font-size: clamp(12px, 5vw, 24px);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #424242;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.signup-desktop-request-p {
+    text-align: start;
+    font-size: clamp(10px, 4vw, 24px);
+}
+.signup-desktop-name-p {
+    font-size: clamp(10px, 4vw, 24px);
+}
+.signup-desktop-name-input {
+    height: 36px;
+    border-radius: 8px;}
+.signup-desktop-email-p {
+    font-size: clamp(10px, 4vw, 24px);
+}
+.signup-desktop-email-input {
+    height: 36px;
+    border-radius: 8px;
+}
+.signup-desktop-password-p {
+    font-size: clamp(10px, 4vw, 24px);
+}
+.signup-desktop-password-input {
+    height: 36px;
+    border-radius: 8px;
+}
+.signup-desktop-password-btn {
+    right: 16px;
+    bottom: 4px;
+    background-size: 14px;
+    position: absolute;
+}
+.signup-desktop-signup-btn {
+    height: 58px;
+    border-radius: 16px;
+    font-size: clamp(10px, 4vw, 24px);
+}
+.signup-desktop-or-p{
+    font-size: clamp(10px, 4vw, 24px);
+}
+.signup-desktop-google-btn {
+    font-size: clamp(10px, 3vw, 24px);
+    background-size: 4% 90%;
+    width: 50%;
+}
+.signup-desktop-signin-p {
+    font-size: clamp(10px, 3vw, 24px);
+}
+.signup-desktop-signin-btn {
+    font-size: clamp(10px, 3vw, 24px);
+}
 }
