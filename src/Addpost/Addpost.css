@@ -1,0 +1,13 @@
+.add-post {
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    width: clamp(40px, 3.47vw, 60px);
+    height: clamp(40px, 3.47vw, 60px);
+    padding: 0;
+    background-color: #6C63FF;
+    background-image: url("../assets/plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: clamp(20px, 167vw, 30px) 24px;
+}

@@ -1,0 +1,9 @@
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
+    margin: auto;
+    height: 48px;
+    justify-content: end;
+    gap: 33.55vw;
+}

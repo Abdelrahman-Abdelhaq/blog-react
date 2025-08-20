@@ -1,0 +1,19 @@
+.spacer-1 {
+    width: 100vw;
+    height: 96px;
+}
+.spacer-2 {
+    width: 100vw;
+    height: 96px;
+    background-image: url("../assets/right1.svg");
+    background-repeat: no-repeat;
+    background-position: right 0 top 36px;
+}
+.spacer-3 {
+    width: 100vw;
+    height: 16px;
+}
+.spacer-4 {
+    width: 100vw;
+    height: 96px;
+}
