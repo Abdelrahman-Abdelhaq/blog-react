@@ -28,6 +28,14 @@
     font-weight: bold;
     margin: 0;
 }
+.title-mobile{
+    font-size: clamp(12px, .98vw, 30px);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6941C6;
+    font-weight: bold;
+    margin: 0;
+    display: none;
+}
 
 .title-2-div {
     height: 60px;
@@ -40,7 +48,7 @@
 
 .title-2 {
     margin: 0;
-    font-size: clamp(36px, 3.34vw, 66px);
+    font-size: clamp(32px, 3.34vw, 66px);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #42307D;
@@ -57,14 +65,14 @@
 
 .title-3 {
     margin: 0;
-    font-size: clamp(16px, 1.4vw, 30px);
+    font-size: clamp(12px, 1.4vw, 30px);
     font-family: Arial, Helvetica, sans-serif;
     color: #6941C6;
 }
 
 .search-div {
     height: 48px;
-    width: 25%;
+    width: clamp(280px,22.23vw,380px);
 }
 
 .search {
@@ -83,4 +91,29 @@
 
 .search::placeholder {
     color: #667085;
+}
+
+@media screen and (max-width:481px) {
+.title-div {
+    width: clamp(100px, 5.7vw, 100px);
+}
+.title{
+    display: none;
+}
+.title-mobile{
+    display: flex;
+}
+.title-2{
+    font-size: clamp(28px, 3.34vw, 66px);
+}
+.title-3-div{
+    width: clamp(380px, 71.12vw, 1200px);
+}
+.title-3{
+    font-size: clamp(16px, 1.4vw, 30px);
+    text-align: center;
+}
+.search-div{
+    width: clamp(344px, 22.23vw, 380px);
+}
 }

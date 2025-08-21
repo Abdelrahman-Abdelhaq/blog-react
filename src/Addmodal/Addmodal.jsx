@@ -1,0 +1,42 @@
+import React from 'react'
+import "./Addmodal.css"
+
+const Addmodal = ({isNewPost,closeModal}) => {
+    if(isNewPost === false ) return null;
+  return (
+    <div className='m-b-div'>
+        <div className='n-p-modal'>
+            <div className='n-p-t-div'>
+                <p className='n-p-t-p'>Add New Post</p>
+            </div>
+            <div className='m-g-div'>
+                <p className='m-g-p'>Genre:</p>
+                <input type="text"  className='m-g-i' placeholder='Post Genre'/>
+            </div>
+            <div className='m-t-div'>
+                <p className='m-t-p'>Title:</p>
+              <input type="text"  className='m-t-i' placeholder='Post Title'/>
+            </div>
+            <div className='m-d-div'>
+                <p className='m-d-p'>Description:</p>
+                <input type="text" className='m-d-i' placeholder='Post Description'/>
+            </div>
+            <div className='m-text-div'>
+                <p className='m-text-p'>Text:</p>
+                <input type="text" className='m-text-i' placeholder='Post Text'/>
+            </div>
+            <div className='m-p-div'>
+                <p className='m-p-p'>Picture:</p>
+                <input type="file" className='m-p-i'/>
+            </div>
+            <div className='m-btn-div'>
+                <button className='m-btn-c' onClick={closeModal}>Close</button>
+            <button className='m-btn-s'>Submit</button>
+            </div>
+        </div>
+    </div>
+    
+  )
+}
+
+export default Addmodal

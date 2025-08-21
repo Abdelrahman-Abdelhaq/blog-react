@@ -5,6 +5,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from "./Login/Login.jsx"
 import Signup from './Signup/Signup.jsx'
 import Blog from './Blog/Blog.jsx'
+import Addmodal from './Addmodal/Addmodal.jsx'
 const Router = createBrowserRouter([
     {
       path:'/',
@@ -17,7 +18,9 @@ const Router = createBrowserRouter([
     },
     {
       path:"/blog",
-      element:<Blog/>
+      element: 
+      // <Addmodal/>
+      <Blog/>
     },
     {
       path:"*",

@@ -6,6 +6,7 @@ const Headers = () => {
             <div className='header'>
                 <div className='title-div'>
                     <p className='title'>Our blog</p>
+                    <p className="title-mobile">Pricing plans</p>
                 </div>
                 <div className='title-2-div'>
                     <p className='title-2'>Resources and insights</p>

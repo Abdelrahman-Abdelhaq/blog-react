@@ -87,3 +87,17 @@
     color: #667085;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 768px) {
+.post {
+        grid-column: span 6;
+        width: clamp(180px,40vw,320px);
+    }
+}
+
+@media screen and (max-width:481px) {
+.post {
+        grid-column: span 12;
+        width: clamp(320px, 80vw, 420px);
+    }
+}

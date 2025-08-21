@@ -22,12 +22,13 @@ html,body{
 .main-div{
     width: 89vw;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
 .posts{
     box-sizing: border-box;
     width: 84.5vw;
     height: auto;
-    margin: 0 32px 0 32px;
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(1,1fr);
