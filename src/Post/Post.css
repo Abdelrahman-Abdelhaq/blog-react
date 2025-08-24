@@ -9,6 +9,10 @@
     padding: 24px 24px 32px 24px;
     box-shadow: grey 0px 2px 10px;
 }
+.no-decoration{
+    color: black;
+    text-decoration: none;
+}
 
 .content {
     position: relative;

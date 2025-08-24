@@ -6,6 +6,7 @@ import Login from "./Login/Login.jsx"
 import Signup from './Signup/Signup.jsx'
 import Blog from './Blog/Blog.jsx'
 import Addmodal from './Addmodal/Addmodal.jsx'
+import PostPage from './BlogPage/PostPage.jsx'
 const Router = createBrowserRouter([
     {
       path:'/',
@@ -18,9 +19,10 @@ const Router = createBrowserRouter([
     },
     {
       path:"/blog",
-      element: 
-      // <Addmodal/>
-      <Blog/>
+      element: <Blog/>
+    },
+    { path:"/postpage",
+      element:<PostPage/>
     },
     {
       path:"*",
