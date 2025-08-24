@@ -1,5 +1,5 @@
 import "./Post.css"
-import image from "../assets/image.svg"
+import image from "../assets/post-image.svg"
 import avatar from "../assets/avatar.svg"
 
 const Post = () => {
