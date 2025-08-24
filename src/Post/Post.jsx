@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Post.css"
 import image from "../assets/image.svg"
 import avatar from "../assets/avatar.svg"
