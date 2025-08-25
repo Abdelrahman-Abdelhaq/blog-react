@@ -160,6 +160,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 32px;
 }
 .signup-desktop-or-p {
     margin: 0;
@@ -175,21 +176,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    outline: 1px solid #bdbdbd5e;
+    border-radius: 16px;
 }
-/* start from here next time
-.........................
-.........................
-.........................
-*/
-.signup-desktop-google-div {
-    margin-top: 24px;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
-}
+
 .signup-google-logo-btn{
     border: none;
     background-color: white;
@@ -208,8 +199,9 @@ body {
     border: none;
     font-size: clamp(11px, 1vw, 24px);
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-weight:  600;
     background-color: white;
+    color: #424242;
 }
 .signup-desktop-signin-div {
     margin-top: 32px;

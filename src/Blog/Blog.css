@@ -9,15 +9,16 @@ html,body{
     url("../assets/left2.svg"),
     url("../assets/right1.svg"),
     url("../assets/right2.svg"),
-    url("../assets/right3.svg"),
+    url("../assets/left1.svg"),
     url("../assets/right12.svg");
     background-position: left 0px top 574px,
     left 0px top 666px,
     right 0 top 378px,
-    right 0px top 444px,
-    right 0px top 480px,
+    right -20px top 442px,
+    right 0px top 526px,
     right 200px top 410px;
     background-repeat: no-repeat;
+    position: relative;
 }
 .main-div{
     width: 89vw;

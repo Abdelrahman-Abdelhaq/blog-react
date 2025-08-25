@@ -2,6 +2,7 @@ import { useState } from "react";
 import signin from "../assets/signin.svg"
 import { Link } from "react-router";
 import "./Login.css"
+import or_spacer from "../assets/or_spacer.svg"
 
 const Login = ()=> {
     const [isPassword,setIsPassword] = useState("password");
@@ -39,7 +40,9 @@ const Login = ()=> {
                         <button className="login-signin-btn" onClick={()=>{console.log("stop Hitting me Moron!")}}>Sign in</button>
                     </div>
                     <div className="login-or-div">
+                        <img src={or_spacer} alt="spacer" className="or-spacer-1" />
                         <p className="login-or-p">OR</p>
+                        <img src={or_spacer} alt="spacer" className="or-spacer-2" />
                     </div>
                     <div className="login-google-div">
                         <button className="login-google-logo-btn"></button>

@@ -150,6 +150,12 @@ html,body{
 }
 .login-or-div {
     margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+.or-spacer-1,.or-spacer-2{
+    width: clamp(28px,2.23vw,36px);
 }
 .login-or-p {
     margin: 0px;
@@ -167,6 +173,9 @@ html,body{
     justify-content: center;
     align-items: center;
     gap: 3%;
+    border: none;
+    outline: 1px solid #bdbdbd5e;
+    border-radius: 16px;
 }
 
 .login-google-btn {
