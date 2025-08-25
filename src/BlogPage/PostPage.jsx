@@ -4,9 +4,21 @@ import spacer from "../assets/spacer.svg"
 import post_pic from "../assets/post-pic.svg"
 import {Link} from "react-router"
 import "./PostPage.css"
+import menu from "../assets/menu.svg"
+import { useState } from "react"
+import MobileList from "../MobileList/MobileList"
 const PostPage = () => {
+  const [mobileList,setMobileList] = useState(false);
+  const openList = ()=>{
+    setMobileList(true);
+  }
+  const closeList = () =>{
+    setMobileList(false);
+  }
   return (
     <div className="post-page-main-div">
+      <button className="open-mobile-list" onClick={openList}></button>
+      <MobileList isMobileList={mobileList} closeMobileList={closeList}/>
       <div className="post-page-header-div">
         <Link to={"/blog"} className="no-underline"><p className="post-page-brand">team.</p></Link>
         <div className="post-page-header-elements">
