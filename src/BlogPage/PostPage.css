@@ -116,11 +116,18 @@ li:hover{
     font-size: clamp(10px, .98vw, 18px);
 }
 .post-page-pic-div{
-    width: 62.5vw;
+    width: clamp(300px,62.5vw,1100px);
+    height: clamp(180px, 31.25vw, 600px);
     margin: auto;
+    display: flex;
+    /* justify-content: center; */
+}
+.post-page-pic{
+    width: clamp(300px, 62.5vw, 1100px);
+    object-fit: cover;
 }
 .post-page-post-text-div{
-    width: 48.62vw;
+    width: clamp(280px,48.62vw,900px);
     margin: auto;
 }
 .post-page-post-text{
