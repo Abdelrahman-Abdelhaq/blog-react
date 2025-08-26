@@ -9,13 +9,12 @@
     border: none;
     box-shadow: #80808085 0 0 10px 1px;
     position: absolute;
-    top: 84px;
+    top: clamp(84px,5.84vw,100px);
     right: 2.23vw;
     background-color: white;
     border-radius: 8px;
     z-index: 1;
 }
-/* 91.5% */
 .info-break{
     width: clamp(280px, 26.12vw, 420px);
     margin: 0;
@@ -150,13 +149,13 @@
     display: flex;
     justify-content: end;
 }
-/* 1.95vw */
 .info-cancel{
     cursor: pointer;
     color: #80808085;
     border: none;
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     font-size: clamp(10px, .97vw, 18px);
     margin-right: 28px;
     padding: 0;
