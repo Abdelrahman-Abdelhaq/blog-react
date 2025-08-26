@@ -7,32 +7,50 @@ import Addmodal from "../Addmodal/Addmodal.jsx"
 import { useState } from "react"
 import Profile from "../Profile/Profile.jsx"
 import ProfileEditor from "../ProfileEditor/ProfileEditor.jsx"
+import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx"
 const Blog = () => {
   const [isNewPost,setIsNewPost] =useState(false);
-  const [isProfile,setIsProfile] =useState(false);
-  const newpost = ()=>{
+  const [isprofile,setIsProfile] =useState(false);
+  const [isEditProfile,setIsEditProfile] =useState(false);
+  const [postsHeight,setPostsHeight] = useState(616);
+  const openNewPostModal = ()=>{
     setIsNewPost(true);
   }
-  const closeModal = ()=>{
+  const closeNewPostModal = ()=>{
     setIsNewPost(false);
   }
   const openProfileEditor= ()=>{
-    setIsProfile(true);
-    console.log("Profile-Editor Opened")
+    setIsProfile(false);
+    setIsEditProfile(true);
   }
   const closeProfileEditor= ()=>{
+    setIsEditProfile(false);
+  }
+  const openProfileInfo = ()=>{
+    if (isprofile === false && isEditProfile === false){
+    setIsProfile(true);
+    }
+    else{
+      return;
+    }
+  }
+  const closeProfileInfo = ()=>{
     setIsProfile(false);
+  }
+  const handleLoadMore = ()=>{
+    setPostsHeight(p => p+616)
   }
   return (
     <div className="background">
-      <Profile openProfileEditor={openProfileEditor}/>
-      <ProfileEditor isProfile={isProfile} closeProfileEditor={closeProfileEditor}/>
+      <Profile open_modal={openProfileInfo}/>
+      <ProfileEditor isProfile={isEditProfile} closeProfileEditor={closeProfileEditor}/>
+      <ProfileInfo isProfile={isprofile} closeProfileInfo={closeProfileInfo} openProfileEditor={openProfileEditor}/>
       <Spacer_1></Spacer_1>
       <Headers/>
       <Spacer_2/>
-      <Addmodal isNewPost={isNewPost} closeModal={closeModal}/>
+      <Addmodal isNewPost={isNewPost} closeModal={closeNewPostModal}/>
       <div className='main-div'>
-          <div className='posts'>
+          <div className='posts' style={{height:`${postsHeight}px`}}>
             <Post/>
             <Post/>
             <Post/>
@@ -42,7 +60,7 @@ const Blog = () => {
           </div>
       </div>
       <Spacer_3/>
-      <Footer newpost={newpost}/>
+      <Footer handleLoadMore={handleLoadMore} newpost={openNewPostModal}/>
       <Spacer_4/>
     </div>
   )

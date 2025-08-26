@@ -7,7 +7,7 @@
     width: 26.68vw;
     margin-bottom: 48px;
     padding: 24px 24px 32px 24px;
-    box-shadow: grey 0px 2px 10px;
+    box-shadow: grey 0px 0px 10px 1px ; 
 }
 .no-decoration{
     color: black;
@@ -102,6 +102,6 @@
 @media screen and (max-width:481px) {
 .post {
         grid-column: span 12;
-        width: clamp(320px, 80vw, 420px);
+        width: clamp(300px, 80vw, 420px);
     }
 }

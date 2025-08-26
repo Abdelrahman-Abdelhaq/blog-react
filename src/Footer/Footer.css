@@ -4,12 +4,6 @@
     width: 85vw;
     margin: auto;
     height: 48px;
-    justify-content: end;
-    gap: 33.55vw;
-}
-
-@media screen and (max-width:768px) {
-.btn-container {
-    gap: clamp(100px,33.55vw,30%);
-}
+    justify-content: center;
+    position: relative;
 }

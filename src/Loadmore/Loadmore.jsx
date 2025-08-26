@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Loadmore.css"
-const Loadmore = () => {
+const Loadmore = ({handLoadMore}) => {
   return (
-    <button className='load-more'>
+    <button className='load-more' onClick={handLoadMore}>
             <p className='load-p'>Load more</p>
     </button>
   )

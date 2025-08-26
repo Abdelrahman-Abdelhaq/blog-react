@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Addmodal.css"
 
+
 const Addmodal = ({isNewPost,closeModal}) => {
+    const [selectedValue,setSelectedValue] =useState('')
+    const handleSelect =  (e) => {
+     setSelectedValue(e.target.value)}
     if(isNewPost === false ) return null;
   return (
     <div className='m-b-div'>
@@ -10,8 +14,17 @@ const Addmodal = ({isNewPost,closeModal}) => {
                 <p className='n-p-t-p'>Add New Post</p>
             </div>
             <div className='m-g-div'>
-                <p className='m-g-p'>Genre:</p>
-                <input type="text"  className='m-g-i' placeholder='Post Genre'/>
+                <p className='m-g-p'>Category:</p>
+                <select className='category-select' 
+                value={selectedValue} 
+                onChange={handleSelect}
+                >
+                    <option value="Design">Design</option>
+                    <option value="Product">Product</option>
+                    <option value="Management">Management</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Customer Success">Customer Success</option>
+                </select>
             </div>
             <div className='m-t-div'>
                 <p className='m-t-p'>Title:</p>
