@@ -6,6 +6,7 @@ import Login from "./Login/Login.jsx"
 import Signup from './Signup/Signup.jsx'
 import Blog from './Blog/Blog.jsx'
 import PostPage from './BlogPage/PostPage.jsx'
+import ErrorPath from './404/ErrorPath.jsx'
 const Router = createBrowserRouter([
     {
       path:'/',
@@ -25,7 +26,7 @@ const Router = createBrowserRouter([
     },
     {
       path:"*",
-      element: <Login/>
+      element: <ErrorPath/>
     }
   ])
 createRoot(document.getElementById('root')).render(

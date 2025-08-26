@@ -1,0 +1,43 @@
+.error-main-div{
+    width: 80vw;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.error-border-div{
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.error-p{
+    font-size: clamp(16px,2.01vw,36px);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 200%;
+    margin-top: 0;
+}
+.red{
+    color: red;
+}
+.error-btn{
+    border: none;
+    border-radius: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    width: clamp(120px, 15.63vw, 300px);
+    font-size: clamp(16px, 2.01vw, 36px);
+    background-color: black;
+    cursor: pointer;   
+}
+.error-pic{
+    height: clamp(100px,15.63vw,300px);
+}
