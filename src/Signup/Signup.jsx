@@ -12,7 +12,7 @@ const Signup = ()=>{
             </div>
             <div className="signup-desktop-right-div">
                 <div className="signup-desktop-title-div">
-                    <p className="signup-desktop-title-p">Join us Now!!</p>
+                    <p className="signup-desktop-title-p">Join us <br />Now!!</p>
                     <p className="signup-desktop-request-p">Let's Create your account</p>
                 </div>
                 <div className="signup-desktop-name-div">
