@@ -13,3 +13,8 @@
     position: absolute;
     right: 0; 
 }
+@media screen and (max-width:481px) {
+.add-post{
+    cursor: none;
+}
+}

@@ -168,3 +168,12 @@
     width: clamp(80px,7vw,140px);
 
 }
+
+@media screen and (max-width:481px) {
+.m-btn-c{
+    cursor: none;
+}
+.m-btn-s{
+    cursor: none;
+}
+}

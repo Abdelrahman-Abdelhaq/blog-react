@@ -6,3 +6,9 @@
     height: clamp(40px,3.34vw,56px);
     cursor: pointer;
 }
+
+@media screen and (max-width: 481px) {
+.blog-profile-pic{
+    cursor: none;
+}
+}

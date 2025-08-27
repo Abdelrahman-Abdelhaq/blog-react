@@ -155,22 +155,34 @@
     color: #80808085;
     border: none;
     background-color: white;
+    color: red;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: clamp(10px, .97vw, 18px);
+    font-size: clamp(12px, .97vw, 18px);
     margin-right: 28px;
     padding: 0;
 }
 .info-save{
     cursor: pointer;
-    background-color: #4318D1;
+    background-color: #D6BBFB;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     height: 38px;
     width: clamp(110px,9.56vw,146px);
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: clamp(10px, .97vw, 18px);
+    font-size: clamp(12px, .97vw, 18px);
+}
+.info-save:hover{
+    background-color: #bc9bea;
+}
+@media screen and (max-width: 481px) {
+.info-cancel{
+    cursor: none;
+}
+.info-save{
+    cursor: none;
+}
 }
