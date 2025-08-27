@@ -30,7 +30,7 @@
     object-fit: cover;
 }
 
-.content-genre {
+.content-category {
     margin-bottom: 12px;
     margin-top: 0;
     font-size: clamp(12px,.97vw,20px);

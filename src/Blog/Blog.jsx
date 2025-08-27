@@ -8,11 +8,14 @@ import { useState } from "react"
 import Profile from "../Profile/Profile.jsx"
 import ProfileEditor from "../ProfileEditor/ProfileEditor.jsx"
 import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx"
+import list_items from "../Items/item.js"
+import grid_items from "../Items/item.js"
 const Blog = () => {
   const [isNewPost,setIsNewPost] =useState(false);
   const [isprofile,setIsProfile] =useState(false);
   const [isEditProfile,setIsEditProfile] =useState(false);
-  const [postsHeight,setPostsHeight] = useState(616);
+  const [visiblePosts,setVisiblePosts] = useState(3);
+  const [items,setItems] = useState(grid_items);
   const openNewPostModal = ()=>{
     setIsNewPost(true);
   }
@@ -38,7 +41,7 @@ const Blog = () => {
     setIsProfile(false);
   }
   const handleLoadMore = ()=>{
-    setPostsHeight(p => p+616)
+    setVisiblePosts(p => p+3)
   }
   return (
     <div className="background">
@@ -50,17 +53,14 @@ const Blog = () => {
       <Spacer_2/>
       <Addmodal isNewPost={isNewPost} closeModal={closeNewPostModal}/>
       <div className='main-div'>
-          <div className='posts' style={{height:`${postsHeight}px`}}>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
+          <div className='posts'>
+            {items.slice(0,visiblePosts).map((item)=>(
+            <Post post={item} key={item.id}/>
+            ))}
           </div>
       </div>
       <Spacer_3/>
-      <Footer handleLoadMore={handleLoadMore} newpost={openNewPostModal}/>
+      <Footer items={items} handleLoadMore={handleLoadMore} newpost={openNewPostModal}/>
       <Spacer_4/>
     </div>
   )

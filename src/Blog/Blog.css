@@ -29,12 +29,11 @@ html,body{
 .posts{
     box-sizing: border-box;
     width: 84.5vw;
-    overflow-y: hidden;
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(1,1fr);
     grid-auto-flow: row;
-    place-items: center;
+    place-items: center;    
 }
 @media screen and (max-width:481px) {
 .posts{
