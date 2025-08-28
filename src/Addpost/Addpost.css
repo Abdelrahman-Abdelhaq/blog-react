@@ -10,8 +10,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: clamp(20px, 167vw, 30px) 24px;
-    position: absolute;
-    right: 0; 
+    position: fixed;
+    right: 3%; 
+    bottom: 10%;
 }
 @media screen and (max-width:481px) {
 .add-post{

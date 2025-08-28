@@ -5,7 +5,7 @@
 .spacer-2 {
     width: 100vw;
     height: 96px;
-    background-image: url("../assets/right1.svg");
+    /* background-image: url("../assets/right1.svg"); */
     background-repeat: no-repeat;
     background-position: right 0 top 36px;
 }

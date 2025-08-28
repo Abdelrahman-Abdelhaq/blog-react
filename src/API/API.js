@@ -7,7 +7,7 @@ const axiosClient = axios.create({
     }
 });
 
-export const fetchPost = async (setPosts) =>{
-    const res = await axiosClient.get("/posts")
-    setPosts(res.data)
+export const fetchPost = async (setPosts,offset,limit) =>{
+    const res = await axiosClient.get(`/posts?limit=${limit}&offset=${offset}`)
+    setPosts(p => [...p,...res.data])
 } 

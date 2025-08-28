@@ -4,8 +4,7 @@ import spacer from "../assets/spacer.svg"
 import post_pic from "../assets/post-pic.svg"
 import {Link} from "react-router"
 import "./PostPage.css"
-import menu from "../assets/menu.svg"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MobileList from "../MobileList/MobileList"
 const PostPage = () => {
   const [mobileList,setMobileList] = useState(false);
@@ -15,10 +14,19 @@ const PostPage = () => {
   const closeList = () =>{
     setMobileList(false);
   }
+  useEffect(()=>{
+    if(mobileList === true){
+      document.body.classList.add("overflowY")
+    }
+    else{
+      document.body.classList.remove("overflowY")
+    }
+    return document.body.classList.remove("overflowY")
+  },[])
   return (
-    <div className="post-page-main-div">
+    <div className="post-page-main-div" id="post_page">
       <button className="open-mobile-list" onClick={openList}></button>
-      <MobileList isMobileList={mobileList} closeMobileList={closeList}/>
+      <MobileList mobileList={mobileList} closeMobileList={closeList}/>
       <div className="post-page-header-div">
         <Link to={"/blog"} className="no-underline"><p className="post-page-brand">team.</p></Link>
         <div className="post-page-header-elements">

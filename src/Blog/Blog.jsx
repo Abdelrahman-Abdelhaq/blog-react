@@ -14,13 +14,16 @@ const Blog = () => {
   const [isNewPost,setIsNewPost] =useState(false);
   const [isprofile,setIsProfile] =useState(false);
   const [isEditProfile,setIsEditProfile] =useState(false);
-  const [visiblePosts,setVisiblePosts] = useState(3);
   const [posts,setPosts] = useState([]);
+  const [offset,setOffset] = useState(0);
+  const [limit,setLimit] = useState(3);
   const openNewPostModal = ()=>{
+    document.body.classList.add("overflowY")
     setIsNewPost(true);
   }
   const closeNewPostModal = ()=>{
     setIsNewPost(false);
+    document.body.classList.remove("overflowY")
   }
   const openProfileEditor= ()=>{
     setIsProfile(false);
@@ -41,12 +44,12 @@ const Blog = () => {
     setIsProfile(false);
   }
   const handleLoadMore = ()=>{
-    setVisiblePosts(p => p+3)
+    setOffset(p => p+3)
   }
  useEffect(()=>{
-    fetchPost(setPosts);
+    fetchPost(setPosts,offset,limit);
     console.log(posts)
-  },[])
+  },[offset])
   return (
     <div className="background">
       <Profile open_modal={openProfileInfo}/>
@@ -58,13 +61,13 @@ const Blog = () => {
       <Addmodal isNewPost={isNewPost} closeModal={closeNewPostModal}/>
       <div className='main-div'>
           <div className='posts'>
-            {posts.slice(0,visiblePosts).map((post)=>(
-              <Post key={post.id} post={post}/>
+            {posts.map((post)=>(
+              <Post key={post.post_id} post={post}/>
             ))}
           </div>
       </div>
       <Spacer_3/>
-      <Footer items={posts} handleLoadMore={handleLoadMore} newpost={openNewPostModal}/>
+      <Footer items={posts} handleLoadMore={handleLoadMore} newpost={openNewPostModal} />
       <Spacer_4/>
     </div>
   )
