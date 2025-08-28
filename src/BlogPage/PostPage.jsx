@@ -21,8 +21,8 @@ const PostPage = () => {
     else{
       document.body.classList.remove("overflowY")
     }
-    return document.body.classList.remove("overflowY")
-  },[])
+    return ()=>{document.body.classList.remove("overflowY")} 
+  },[mobileList])
   return (
     <div className="post-page-main-div" id="post_page">
       <button className="open-mobile-list" onClick={openList}></button>
