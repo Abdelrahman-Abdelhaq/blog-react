@@ -1,5 +1,5 @@
 .load-more {
-    position: fixed;
+    position: absolute;
     bottom: 10%;
     right: 44%;
     cursor: pointer;
