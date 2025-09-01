@@ -23,7 +23,7 @@ const Post = ({post,posts,setPosts}) => {
               </div>
                 <img src={image} alt="image " className="content-img" />
                 <p className="content-category">{post.post_category}</p>
-                <p className="content-title">{post.post_title}</p>
+                <Link to={'/postpage'} className="no-decoration"><p className="content-title">{post.post_title}</p></Link>
                 <p className="content-desc">{post.post_description}</p>
                 <div className="content-info">
                     <img src={avatar} alt="avatar" className="content-avatar" />
