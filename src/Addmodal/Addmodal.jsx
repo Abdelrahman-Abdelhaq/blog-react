@@ -4,11 +4,13 @@ import { addPost } from '../API/API';
 
 
 const Addmodal = ({isNewPost,closeModal,setPosts}) => {
-    const [categoryValue,setCategoryValue] =useState('');
+    const [categoryValue,setCategoryValue] =useState('Design');
     const [titleValue,setTitleValue] = useState('');
     const [descriptionValue,setDescriptionValue] = useState('');
     const handleSubmit = ()=>{
         addPost(categoryValue,titleValue,descriptionValue,setPosts);
+        setTitleValue('')
+        setDescriptionValue('')
         closeModal();
     }
     if(isNewPost === false ) return null;
@@ -21,7 +23,6 @@ const Addmodal = ({isNewPost,closeModal,setPosts}) => {
             <div className='m-g-div'>
                 <p className='m-g-p'>Category:</p>
                 <select className='category-select' 
-                defaultValue={"Design"}
                 value={categoryValue} 
                 onChange={(e) => {setCategoryValue(e.target.value)}}>
                     <option value="Design">Design</option>

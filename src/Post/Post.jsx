@@ -6,13 +6,14 @@ import moment from "moment"
 import { deletePost, editPost } from "../API/API"
 import EditButton from "../EditButton/EditButton"
 
-const Post = ({post,posts,setPosts}) => {
+const Post = ({post,setDeleteCounter}) => {
   const newDate = moment(post.post_date).format('DD-MMM-YYYY');
   const handleDelete= () => {
-    deletePost(posts,post.post_id,setPosts);
+    deletePost(post.post_id);
+    setDeleteCounter(p => p+1);
   }
   const handleEdit = () => {
-    editPost(setPosts,post.post_category,post.post_title,post.post_description,post.post_id)
+    editPost(post.post_category,post.post_title,post.post_description,post.post_id)
   }
   return (
     <div className='post' >
