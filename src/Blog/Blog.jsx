@@ -50,7 +50,7 @@ const Blog = () => {
  useEffect(()=>{
     fetchPost(setPosts,offset,limit);
     console.log(posts)
-  },[offset,deleteCounter])
+  },[deleteCounter])
   return (
     <div className="background">
       <Profile open_modal={openProfileInfo}/>
