@@ -1,4 +1,7 @@
 .load-more {
+    position: fixed;
+    bottom: 11%;
+    right: 44%;
     cursor: pointer;
     border: none;
     border-radius: 8px;
@@ -21,8 +24,14 @@
     font-weight: bold;
 }
 
+@media screen and (max-width:768px) {
+.load-more{
+    right: 42%;
+}
+}
 @media screen and (max-width:481px) {
 .load-more{
+    right: 38%;
     cursor: none;
 }
 }
