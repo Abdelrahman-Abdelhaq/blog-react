@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import "./Addmodal.css"
+import { addPost } from '../API/API';
 
 
-const Addmodal = ({isNewPost,closeModal}) => {
-    const [selectedValue,setSelectedValue] =useState('')
-    const handleSelect =  (e) => {
-     setSelectedValue(e.target.value)}
+const Addmodal = ({isNewPost,closeModal,setPosts}) => {
+    const [categoryValue,setCategoryValue] =useState('');
+    const [titleValue,setTitleValue] = useState('');
+    const [descriptionValue,setDescriptionValue] = useState('');
+    const handleSubmit = ()=>{
+        addPost(categoryValue,titleValue,descriptionValue,setPosts);
+        closeModal();
+    }
     if(isNewPost === false ) return null;
   return (
     <div className='m-b-div'>
@@ -16,9 +21,9 @@ const Addmodal = ({isNewPost,closeModal}) => {
             <div className='m-g-div'>
                 <p className='m-g-p'>Category:</p>
                 <select className='category-select' 
-                value={selectedValue} 
-                onChange={handleSelect}
-                >
+                defaultValue={"Design"}
+                value={categoryValue} 
+                onChange={(e) => {setCategoryValue(e.target.value)}}>
                     <option value="Design">Design</option>
                     <option value="Product">Product</option>
                     <option value="Management">Management</option>
@@ -28,11 +33,15 @@ const Addmodal = ({isNewPost,closeModal}) => {
             </div>
             <div className='m-t-div'>
                 <p className='m-t-p'>Title:</p>
-              <input type="text"  className='m-t-i' placeholder='Post Title'/>
+              <input type="text"  className='m-t-i' placeholder='Post Title'
+              value={titleValue}
+              onChange={e => {setTitleValue(e.target.value)}}/>
             </div>
             <div className='m-d-div'>
                 <p className='m-d-p'>Description:</p>
-                <input type="text" className='m-d-i' placeholder='Post Description'/>
+                <input type="text" className='m-d-i' placeholder='Post Description'
+                value={descriptionValue}
+                onChange={e => {setDescriptionValue(e.target.value)}}/>
             </div>
             <div className='m-text-div'>
                 <p className='m-text-p'>Text:</p>
@@ -44,7 +53,7 @@ const Addmodal = ({isNewPost,closeModal}) => {
             </div>
             <div className='m-btn-div'>
                 <button className='m-btn-c' onClick={closeModal}>Close</button>
-            <button className='m-btn-s'>Submit</button>
+            <button className='m-btn-s' onClick={handleSubmit}>Submit</button>
             </div>
         </div>
     </div>

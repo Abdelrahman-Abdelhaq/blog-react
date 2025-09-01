@@ -58,11 +58,11 @@ const Blog = () => {
       <Spacer_1></Spacer_1>
       <Headers/>
       <Spacer_2/>
-      <Addmodal isNewPost={isNewPost} closeModal={closeNewPostModal}/>
+      <Addmodal isNewPost={isNewPost} closeModal={closeNewPostModal} setPosts={setPosts}/>
       <div className='main-div'>
           <div className='posts'>
             {posts.map((post)=>(
-              <Post key={post.post_id} post={post}/>
+              <Post key={post.post_id} post={post} posts={posts} setPosts={setPosts}/>
             ))}
           </div>
       </div>

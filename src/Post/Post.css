@@ -1,19 +1,18 @@
 .post {
-    cursor: pointer;
     box-sizing: border-box;
     background-color: white;
     height: 580px;
-    grid-column: span 4;
     width: 26.68vw;
     margin-bottom: 48px;
     padding: 24px 24px 32px 24px;
     box-shadow: grey 0px 0px 10px 1px ; 
+    grid-column: span 4;
+    position: relative;
 }
 .no-decoration{
     color: black;
     text-decoration: none;
 }
-
 .content {
     position: relative;
     width: 100%;
@@ -92,11 +91,32 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.delete-post-div{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+   
+}
+.delete-post-btn{
+    width: clamp(14px,2.0vw,32px);
+    height: clamp(14px, 2.0vw, 32px);
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    background-image: url('../assets/delete.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    cursor: pointer;
+}
 @media screen and (max-width: 768px) {
 .post {
         grid-column: span 6;
         width: clamp(180px,40vw,320px);
     }
+.no-decoration{
+        grid-column: span 6;
+}
 }
 
 @media screen and (max-width:481px) {
@@ -104,4 +124,7 @@
         grid-column: span 12;
         width: clamp(300px, 80vw, 420px);
     }
+.no-decoration{
+        grid-column: span 12;
+}
 }

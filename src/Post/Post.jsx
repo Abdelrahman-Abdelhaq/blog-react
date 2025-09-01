@@ -3,15 +3,27 @@ import image from "../assets/post-image.svg"
 import avatar from "../assets/avatar.svg"
 import { Link } from "react-router"
 import moment from "moment"
+import { deletePost, editPost } from "../API/API"
+import EditButton from "../EditButton/EditButton"
 
-const Post = ({post}) => {
+const Post = ({post,posts,setPosts}) => {
   const newDate = moment(post.post_date).format('DD-MMM-YYYY');
+  const handleDelete= () => {
+    deletePost(posts,post.post_id,setPosts);
+  }
+  const handleEdit = () => {
+    editPost(setPosts,post.post_category,post.post_title,post.post_description,post.post_id)
+  }
   return (
     <div className='post' >
             <div className='content'>
+              <EditButton/>
+              <div className="delete-post-div">
+                <button className="delete-post-btn" onClick={handleDelete}></button>
+              </div>
                 <img src={image} alt="image " className="content-img" />
                 <p className="content-category">{post.post_category}</p>
-                <Link className="no-decoration" to={"/PostPage"}><p className="content-title">{post.post_title}</p></Link>
+                <p className="content-title">{post.post_title}</p>
                 <p className="content-desc">{post.post_description}</p>
                 <div className="content-info">
                     <img src={avatar} alt="avatar" className="content-avatar" />
@@ -21,7 +33,7 @@ const Post = ({post}) => {
                     </div>
                 </div>
             </div>   
-    </div>    
+    </div>        
   )
 }
 
