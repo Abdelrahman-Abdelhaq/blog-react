@@ -2,18 +2,18 @@ import React from 'react'
 import "./ProfileInfo.css"
 import avatar from "../assets/avatar.svg"
 
-const ProfileInfo = ({isProfile,closeProfileInfo,openProfileEditor}) => {
+const ProfileInfo = ({profPic,userName,userEmail,isProfile,closeProfileInfo,openProfileEditor}) => {
   if (isProfile === false) return null;
   return (
     <div className='profile-info-card'>
       <div className='profile-card-div'>
         <div className='profile-card-background'></div>
         <div className='profile-card-avatar-div'>
-            <img src={avatar} alt="avatar" className='profile-card-avatar' />
+            <img src={profPic} alt="avatar" className='profile-card-avatar' />
         </div>
         <div className='profile-card-user-info-div'>
-            <p className='profile-card-user-name'>Olivia</p>
-            <p className='profile-card-user-email'>olivia@gmail.com</p>
+            <p className='profile-card-user-name'>{userName}</p>
+            <p className='profile-card-user-email'>{userEmail}</p>
         </div>
         <hr  className='profile-card-hr'/>
         <div className='profile-card-btn-div'>

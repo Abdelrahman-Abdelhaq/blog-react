@@ -57,7 +57,9 @@
     line-height: clamp(20px,1.67vw,28px);
 
 }
-
+.content-avatar{
+    border-radius: 50%;
+}
 .content-info {
     height: 40px;
     width: clamp(120px,9.6vw,160px);

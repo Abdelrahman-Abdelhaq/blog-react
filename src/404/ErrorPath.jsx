@@ -9,7 +9,7 @@ const ErrorPath = () => {
       <div className='error-border-div'>
         <img src={err} alt="error" className='error-pic'/>
         <p className='error-p'>Error <span className='red'>404</span>, Page Not Found </p>
-        <Link className='no-underline' to={"/"}><button className='error-btn'>Login Page</button></Link>
+        <Link className='no-underline' to={"/blog"}><button className='error-btn'>Main Page</button></Link>
       </div>
     </div>
   )

@@ -5,6 +5,12 @@
     width: clamp(40px,3.34vw,56px);
     height: clamp(40px,3.34vw,56px);
     cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+.blog-profile-pic:hover{
+    box-shadow: grey 0 0 10px 2px;
+
 }
 
 @media screen and (max-width: 481px) {

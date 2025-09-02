@@ -42,6 +42,7 @@
 .profile-card-avatar{
     width: 70px;
     height: 70px;
+    border-radius: 50%;
 }
 .profile-card-user-info-div{
     position: absolute;

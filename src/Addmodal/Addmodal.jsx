@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import "./Addmodal.css"
 import { addPost } from '../API/API';
+import { newPostStore } from '../States/NewPostStore';
 
 
-const Addmodal = ({isNewPost,closeModal,setPosts}) => {
+const Addmodal = ({setPosts}) => {
+    const isActive = newPostStore((state)=> state.isActive)
+    const closeModal = newPostStore((state)=> state.deactivate)
     const [categoryValue,setCategoryValue] =useState('Design');
     const [titleValue,setTitleValue] = useState('Post Title');
     const [descriptionValue,setDescriptionValue] = useState('Post Description');
@@ -11,9 +14,13 @@ const Addmodal = ({isNewPost,closeModal,setPosts}) => {
         addPost(categoryValue,titleValue,descriptionValue,setPosts);
         setTitleValue('Post Title')
         setDescriptionValue('Post Description')
-        closeModal();
+        handleClose()
     }
-    if(isNewPost === false ) return null;
+    const handleClose = () => {
+        closeModal()
+        document.body.classList.remove("overflowY")
+    }
+    if(isActive === false ) return null;
   return (
     <div className='m-b-div'>
         <div className='n-p-modal'>
@@ -53,7 +60,7 @@ const Addmodal = ({isNewPost,closeModal,setPosts}) => {
                 <input type="file" className='m-p-i'/>
             </div>
             <div className='m-btn-div'>
-                <button className='m-btn-c' onClick={closeModal}>Close</button>
+                <button className='m-btn-c' onClick={handleClose}>Close</button>
             <button className='m-btn-s' onClick={handleSubmit}>Submit</button>
             </div>
         </div>
