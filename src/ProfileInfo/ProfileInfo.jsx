@@ -1,15 +1,15 @@
-import React from 'react'
+import { profilePicStore } from "../States/ProfilePicStore";
 import "./ProfileInfo.css"
-import avatar from "../assets/avatar.svg"
 
-const ProfileInfo = ({profPic,userName,userEmail,isProfile,closeProfileInfo,openProfileEditor}) => {
+const ProfileInfo = ({userName,userEmail,isProfile,closeProfileInfo,openProfileEditor}) => {
+  const profilePic = profilePicStore((state)=> state.pic)
   if (isProfile === false) return null;
   return (
     <div className='profile-info-card'>
       <div className='profile-card-div'>
         <div className='profile-card-background'></div>
         <div className='profile-card-avatar-div'>
-            <img src={profPic} alt="avatar" className='profile-card-avatar' />
+            <img src={profilePic} alt="avatar" className='profile-card-avatar' />
         </div>
         <div className='profile-card-user-info-div'>
             <p className='profile-card-user-name'>{userName}</p>

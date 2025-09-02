@@ -49,6 +49,7 @@
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(14px,1.25vw,20px);
+    color: #6941C6;
 }
 .category-select{
     border: none;
@@ -57,6 +58,10 @@
     border-radius: 6px;
     padding: 0;
     padding-left: 10px;
+    color: #6941C6;
+}
+option{
+    font-family: Arial, Helvetica, sans-serif;
 }
 .m-t-div{
     display: flex;
@@ -70,6 +75,7 @@
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(14px,1.25vw,20px);
+    color: #6941C6;
 }
 .m-t-i{
     border: none;
@@ -78,6 +84,7 @@
     border-radius: 6px;
     padding: 0;
     padding-left: 10px;
+    color: #6941C6;
 }
 .m-d-div{
     display: flex;  
@@ -91,6 +98,7 @@
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(14px, 1.25vw, 20px);
+    color: #6941C6;
 }
 .m-d-i{
     border: none;
@@ -99,6 +107,7 @@
     border-radius: 6px;
     padding: 0;
     padding-left: 10px;
+    color: #6941C6;
 }
 .m-text-div{
     display: flex;
@@ -112,6 +121,7 @@
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(14px, 1.25vw, 20px);
+    color: #6941C6;
 }
 .m-text-i{
     border: none;
@@ -120,7 +130,9 @@
     border-radius: 6px;
     padding: 0;
     padding-left: 10px;
+    color: #6941C6;
 }
+
 .m-p-div{
     display: flex;
     flex-direction: column;
@@ -133,10 +145,21 @@
     margin-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(14px, 1.25vw, 20px);
+    color: #6941C6;
 }
 .m-p-i{
     font-weight: bold;
     font-size: clamp(12px, 1.25vw, 2px);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6941C6;
+}
+.m-p-i::file-selector-button{
+    color: #6941C6;
+    border: 1px solid #6941C6;
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
 .m-btn-div{

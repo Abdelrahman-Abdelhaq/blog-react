@@ -5,7 +5,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from "./Login/Login.jsx"
 import Signup from './Signup/Signup.jsx'
 import Blog from './Blog/Blog.jsx'
-import PostPage from './BlogPage/PostPage.jsx'
+import PostPage from './PostPage/PostPage.jsx'
 import ErrorPath from './404/ErrorPath.jsx'
 const Router = createBrowserRouter([
     {

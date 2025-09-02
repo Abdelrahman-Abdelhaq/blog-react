@@ -11,7 +11,6 @@ import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx"
 import { fetchPost } from "../API/API.js"
 const Blog = () => {
   
-  const [profilePic,SetProfilePic] = useState('/profPic.jpg')
   const [userName,setUserName] = useState('Abdelrahman')
   const [userEmail,setUserEmail] = useState('abdelrahman@gmail.com')
   const [isprofile,setIsProfile] =useState(false);
@@ -47,9 +46,9 @@ const Blog = () => {
   },[offset])
   return (
     <div className="background">
-      <ProfilePic profilePic={profilePic} userName={userName} open_modal={openProfileInfo}/>
+      <ProfilePic open_modal={openProfileInfo}/>
       <ProfileEditor isProfile={isEditProfile} closeProfileEditor={closeProfileEditor}/>
-      <ProfileInfo profPic={profilePic} userName={userName} userEmail={userEmail} isProfile={isprofile} closeProfileInfo={closeProfileInfo} openProfileEditor={openProfileEditor}/>
+      <ProfileInfo userName={userName} userEmail={userEmail} isProfile={isprofile} closeProfileInfo={closeProfileInfo} openProfileEditor={openProfileEditor}/>
       <Spacer_1></Spacer_1>
       <Headers/>
       <Spacer_2/>
@@ -57,7 +56,7 @@ const Blog = () => {
       <div className='main-div'>
           <div className='posts'>
             {posts.map((post)=>(
-              <Post userName={userName} profPic={profilePic} key={post.post_id} post={post} setPosts={setPosts}/>
+              <Post userName={userName} key={post.post_id} post={post} setPosts={setPosts}/>
             ))}
           </div>
       </div>

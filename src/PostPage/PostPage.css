@@ -96,15 +96,15 @@ li:hover{
 }
 .post-page-title-info{
     display: flex;
-    width: 48%;
+    width: 100%;
     height: 56px;
-    align-items: last baseline;
+    align-items:  center;
 }
 .post-page-title-avatar{
-    width: clamp(24px,3.9vw,66px);
-    height: clamp(24px, 3.9vw, 66px);
+    width: clamp(30px,3.9vw,66px);
+    height: clamp(30px, 3.9vw, 66px);
     margin-right: 16px;
-    align-self: baseline;
+    border-radius: 50%;
 }
 .post-page-author-name{
     color: #6D7D8B;
@@ -160,6 +160,7 @@ li:hover{
 .post-page-footer-pic{
     width: clamp(24px, 3.9vw, 66px);
     height: clamp(24px, 3.9vw, 66px);
+    border-radius: 50%;
 }
 .post-page-footer-info{
     display: flex;
@@ -218,6 +219,7 @@ li:hover{
     width: clamp(24px, 3.9vw, 66px);
     height: clamp(24px, 3.9vw, 66px);
     margin-right: 16px;
+    border-radius: 50%;
 }
 .new-comment-input{
     padding-left: 16px;

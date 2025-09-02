@@ -4,8 +4,10 @@ import { Link } from "react-router"
 import moment from "moment"
 import { deletePost, editPost } from "../API/API"
 import EditButton from "../EditButton/EditButton"
+import { profilePicStore } from "../States/ProfilePicStore"
 
-const Post = ({userName,profPic,post,setPosts}) => {
+const Post = ({userName,post,setPosts}) => {
+  const profilePic = profilePicStore((state) => state.pic)
   const newDate = moment(post.post_date).format('DD-MMM-YYYY');
   const handleDelete= () => {
     deletePost(post.post_id,setPosts);
@@ -29,7 +31,7 @@ const Post = ({userName,profPic,post,setPosts}) => {
                 <Link to={'/postpage'} className="no-decoration"><p className="content-title">{post.post_title}</p></Link>
                 <p className="content-desc">{post.post_description}</p>
                 <div className="content-info">
-                    <img src={profPic} alt="avatar" className="content-avatar" />
+                    <img src={profilePic} alt="avatar" className="content-avatar" />
                     <div className="content-data">
                         <p className="content-author">{userName}</p>
                         <p className="content-date">{newDate}</p>

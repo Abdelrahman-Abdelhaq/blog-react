@@ -1,12 +1,13 @@
 import { Spacer_10, Spacer_5, Spacer_6, Spacer_7,Spacer_8,Spacer_9 } from "../Spacer/Spacer"
-import avatar from "../assets/avatar.svg"
 import spacer from "../assets/spacer.svg"
 import post_pic from "../assets/post-pic.svg"
 import {Link} from "react-router"
 import "./PostPage.css"
 import { useEffect, useState } from "react"
 import MobileList from "../MobileList/MobileList"
+import { profilePicStore } from "../States/ProfilePicStore"
 const PostPage = () => {
+  const profilePic = profilePicStore((state) => state.pic)
   const [mobileList,setMobileList] = useState(false);
   const openList = ()=>{
     setMobileList(true);
@@ -49,7 +50,7 @@ const PostPage = () => {
           <p className="post-page-title-p">10 Secrets for managing a remote team </p>
         </div>
         <div className="post-page-title-info">
-          <img src={avatar} alt="avatar" className="post-page-title-avatar" />
+          <img src={profilePic} alt="avatar" className="post-page-title-avatar" />
           <p className="post-page-author-name">Shedrack eze</p>
           <img src={spacer} alt="spacer" className="post-page-info-spacer"/>
           <p className="post-page-info-date">2nd January,2022</p>
@@ -78,7 +79,7 @@ Some of these blogs make over $100k a month, others are just a hobby for their o
       <Spacer_7/>
       <div className="post-page-post-footer-div">
         <div className="post-page-footer-pic-div">
-          <img src={avatar} alt="avatar" className="post-page-footer-pic"/>
+          <img src={profilePic} alt="avatar" className="post-page-footer-pic"/>
         </div>
         <div className="post-page-footer-info">
           <p className="post-page-footer-written">Written by</p>
@@ -94,7 +95,7 @@ Some of these blogs make over $100k a month, others are just a hobby for their o
           <p className="comment-invitation">Join the conversation</p>
         </div>
         <div className="new-comment-div">
-          <img src={avatar} alt="avatar" className="new-comment-pic" />
+          <img src={profilePic} alt="avatar" className="new-comment-pic" />
           <input type="text"  placeholder="Comments" className="new-comment-input"/>
         </div>
         <div className="comment"></div>
