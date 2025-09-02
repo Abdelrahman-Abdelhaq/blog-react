@@ -12,8 +12,11 @@ export const fetchPost = async (setPosts,offset,limit) =>{
     setPosts(p => [...p,...res.data])
 } 
 
-export const deletePost = async (post_id) =>{
+export const deletePost = async (post_id,setPosts) =>{
     const res = await axiosClient.delete(`/posts/${post_id}`)
+    setPosts(p => p.filter((p)=>(
+        p.post_id !== post_id
+    )))
 }
 
 export const addPost = async(Post_category,Post_title,Post_description,setPosts) => {

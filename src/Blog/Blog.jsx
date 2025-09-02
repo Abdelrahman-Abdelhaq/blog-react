@@ -49,8 +49,7 @@ const Blog = () => {
   }
  useEffect(()=>{
     fetchPost(setPosts,offset,limit);
-    console.log(posts)
-  },[deleteCounter])
+  },[])
   return (
     <div className="background">
       <Profile open_modal={openProfileInfo}/>
@@ -63,7 +62,7 @@ const Blog = () => {
       <div className='main-div'>
           <div className='posts'>
             {posts.map((post)=>(
-              <Post key={post.post_id} post={post} posts={posts} setPosts={setPosts} setDeleteCounter={setDeleteCounter}/>
+              <Post key={post.post_id} post={post} setPosts={setPosts}/>
             ))}
           </div>
       </div>
