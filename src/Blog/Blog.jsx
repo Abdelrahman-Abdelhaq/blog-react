@@ -17,7 +17,6 @@ const Blog = () => {
   const [posts,setPosts] = useState([]);
   const [offset,setOffset] = useState(0);
   const [limit,setLimit] = useState(10);
-  const [deleteCounter,setDeleteCounter] = useState(0);
   const openNewPostModal = ()=>{
     document.body.classList.add("overflowY")
     setIsNewPost(true);
@@ -45,11 +44,12 @@ const Blog = () => {
     setIsProfile(false);
   }
   const handleLoadMore = ()=>{
-    setOffset(p => p+3)
+    setOffset(p => p+10)
+    setLimit(p => p+10)
   }
  useEffect(()=>{
     fetchPost(setPosts,offset,limit);
-  },[])
+  },[offset])
   return (
     <div className="background">
       <Profile open_modal={openProfileInfo}/>

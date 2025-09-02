@@ -5,12 +5,12 @@ import { addPost } from '../API/API';
 
 const Addmodal = ({isNewPost,closeModal,setPosts}) => {
     const [categoryValue,setCategoryValue] =useState('Design');
-    const [titleValue,setTitleValue] = useState('');
-    const [descriptionValue,setDescriptionValue] = useState('');
+    const [titleValue,setTitleValue] = useState('Post Title');
+    const [descriptionValue,setDescriptionValue] = useState('Post Description');
     const handleSubmit = ()=>{
         addPost(categoryValue,titleValue,descriptionValue,setPosts);
-        setTitleValue('')
-        setDescriptionValue('')
+        setTitleValue('Post Title')
+        setDescriptionValue('Post Description')
         closeModal();
     }
     if(isNewPost === false ) return null;

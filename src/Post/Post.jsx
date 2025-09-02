@@ -17,7 +17,11 @@ const Post = ({post,setPosts}) => {
   return (
     <div className='post' >
             <div className='content'>
-              <EditButton/>
+              <EditButton setPosts={setPosts} 
+              id={post.post_id}
+              category={post.post_category} 
+              title={post.post_title} 
+              description={post.post_description}/>
               <div className="delete-post-div">
                 <button className="delete-post-btn" onClick={handleDelete}></button>
               </div>
