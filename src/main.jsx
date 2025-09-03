@@ -25,6 +25,10 @@ const Router = createBrowserRouter([
       element:<PostPage/>
     },
     {
+      path:"/edit",
+      element:<></>
+    },
+    {
       path:"*",
       element: <ErrorPath/>
     }

@@ -5,15 +5,14 @@ import moment from "moment"
 import { deletePost, editPost } from "../API/API"
 import EditButton from "../EditButton/EditButton"
 import { profilePicStore } from "../States/ProfilePicStore"
+import { userStore } from "../States/UserStore"
 
-const Post = ({userName,post,setPosts}) => {
+const Post = ({post,setPosts}) => {
+  const {username} = userStore()
   const profilePic = profilePicStore((state) => state.pic)
   const newDate = moment(post.post_date).format('DD-MMM-YYYY');
   const handleDelete= () => {
     deletePost(post.post_id,setPosts);
-  }
-  const handleEdit = () => {
-    editPost(post.post_category,post.post_title,post.post_description,post.post_id)
   }
   return (
     <div className='post' >
@@ -33,7 +32,7 @@ const Post = ({userName,post,setPosts}) => {
                 <div className="content-info">
                     <img src={profilePic} alt="avatar" className="content-avatar" />
                     <div className="content-data">
-                        <p className="content-author">{userName}</p>
+                        <p className="content-author">{username}</p>
                         <p className="content-date">{newDate}</p>
                     </div>
                 </div>

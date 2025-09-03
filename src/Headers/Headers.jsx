@@ -1,6 +1,11 @@
+import { searchStore } from "../States/SearchStore"
 import "./Headers.css"
 
 const Headers = () => {
+  const {search,setSearch} = searchStore();
+    const handleSearch = (e) => {
+      setSearch(e.target.value)
+    }
   return (
     <div className="headers">
             <div className='header'>
@@ -15,7 +20,9 @@ const Headers = () => {
                     <p className='title-3'>The latest industry news, interviews, technologies, and resources.</p>
                 </div>
                 <div className='search-div'>
-                <input type="text" placeholder='Search' className='search' />
+                <input type="text" placeholder='Search' className='search'
+                value={search}
+                onChange={handleSearch}/>
                 </div>
             </div>
     </div>

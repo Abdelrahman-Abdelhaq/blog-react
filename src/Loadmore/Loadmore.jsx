@@ -1,8 +1,14 @@
 import React from 'react'
 import "./Loadmore.css"
-const Loadmore = ({handLoadMore,posts}) => {
+import { PaginationStore } from '../States/PaginationStore'
+const Loadmore = ({}) => {
+  const {setLimit,setOffset} = PaginationStore();
+  const handleClick = () => {
+    setLimit(6);
+    setOffset(6);
+  }
   return (
-    <button className='load-more' onClick={handLoadMore}>
+    <button className='load-more' onClick={handleClick}>
             <p className='load-p'>Load more</p>
     </button>
   )

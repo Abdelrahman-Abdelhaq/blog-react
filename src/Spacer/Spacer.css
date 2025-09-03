@@ -1,11 +1,11 @@
 .spacer-1 {
     width: 100vw;
     height: 96px;
+    background-color: #F9F5FF;
 }
 .spacer-2 {
     width: 100vw;
-    height: 96px;
-    /* background-image: url("../assets/right1.svg"); */
+    height: 6.2vw;
     background-repeat: no-repeat;
     background-position: right 0 top 36px;
 }

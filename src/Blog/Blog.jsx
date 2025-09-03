@@ -6,49 +6,23 @@ import Footer from "../Footer/Footer.jsx"
 import Addmodal from "../Addmodal/Addmodal.jsx"
 import { useEffect, useState } from "react"
 import ProfilePic from "../ProfilePic/ProfilePic.jsx"
-import ProfileEditor from "../ProfileEditor/ProfileEditor.jsx"
 import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx"
 import { fetchPost } from "../API/API.js"
+import { PaginationStore } from "../States/PaginationStore.js"
+import { postsStore } from "../States/PostsStore";
 const Blog = () => {
-  
-  const [userName,setUserName] = useState('Abdelrahman')
-  const [userEmail,setUserEmail] = useState('abdelrahman@gmail.com')
-  const [isprofile,setIsProfile] =useState(false);
-  const [isEditProfile,setIsEditProfile] =useState(false);
   const [posts,setPosts] = useState([]);
-  const [offset,setOffset] = useState(0);
-  const [limit,setLimit] = useState(10);
+  const {limit,offset} = PaginationStore(); 
+  const {pasta,setPasta} = postsStore();
 
-  const openProfileEditor= ()=>{
-    setIsProfile(false);
-    setIsEditProfile(true);
-  }
-  const closeProfileEditor= ()=>{
-    setIsEditProfile(false);
-  }
-  const openProfileInfo = ()=>{
-    if (isprofile === false && isEditProfile === false){
-    setIsProfile(true);
-    }
-    else{
-      return;
-    }
-  }
-  const closeProfileInfo = ()=>{
-    setIsProfile(false);
-  }
-  const handleLoadMore = ()=>{
-    setOffset(p => p+10)
-    setLimit(p => p+10)
-  }
  useEffect(()=>{
-    fetchPost(setPosts,offset,limit);
+    fetchPost(setPosts,offset,limit,pasta,setPasta);
+    console.log(posts)
   },[offset])
   return (
     <div className="background">
-      <ProfilePic open_modal={openProfileInfo}/>
-      <ProfileEditor isProfile={isEditProfile} closeProfileEditor={closeProfileEditor}/>
-      <ProfileInfo userName={userName} userEmail={userEmail} isProfile={isprofile} closeProfileInfo={closeProfileInfo} openProfileEditor={openProfileEditor}/>
+      <ProfilePic/>
+      <ProfileInfo/>
       <Spacer_1></Spacer_1>
       <Headers/>
       <Spacer_2/>
@@ -56,12 +30,12 @@ const Blog = () => {
       <div className='main-div'>
           <div className='posts'>
             {posts.map((post)=>(
-              <Post userName={userName} key={post.post_id} post={post} setPosts={setPosts}/>
+              <Post key={`${post.post_id}-${post.post_title}-${post.post_description}`} post={post} setPosts={setPosts}/>
             ))}
           </div>
       </div>
       <Spacer_3/>
-      <Footer items={posts} handleLoadMore={handleLoadMore}/>
+      <Footer/>
       <Spacer_4/>
     </div>
   )

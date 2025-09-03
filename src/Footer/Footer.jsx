@@ -3,11 +3,11 @@ import "./Footer.css"
 import Loadmore from '../Loadmore/Loadmore.jsx'
 import Addpost from '../Addpost/Addpost.jsx'
 
-const Footer = ({handleLoadMore,posts}) => {
+const Footer = () => {
   
   return (
     <div className='btn-container'>
-        <Loadmore items={posts} handLoadMore={handleLoadMore}/>
+        <Loadmore/>
         <Addpost/>
     </div>
   )

@@ -6,9 +6,11 @@ import "./PostPage.css"
 import { useEffect, useState } from "react"
 import MobileList from "../MobileList/MobileList"
 import { profilePicStore } from "../States/ProfilePicStore"
+import { userStore } from "../States/UserStore"
 const PostPage = () => {
-  const profilePic = profilePicStore((state) => state.pic)
+  const {pic} = profilePicStore();
   const [mobileList,setMobileList] = useState(false);
+  const {username} = userStore();
   const openList = ()=>{
     setMobileList(true);
   }
@@ -50,8 +52,8 @@ const PostPage = () => {
           <p className="post-page-title-p">10 Secrets for managing a remote team </p>
         </div>
         <div className="post-page-title-info">
-          <img src={profilePic} alt="avatar" className="post-page-title-avatar" />
-          <p className="post-page-author-name">Shedrack eze</p>
+          <img src={pic} alt="avatar" className="post-page-title-avatar" />
+          <p className="post-page-author-name">{username}</p>
           <img src={spacer} alt="spacer" className="post-page-info-spacer"/>
           <p className="post-page-info-date">2nd January,2022</p>
         </div>
@@ -79,11 +81,11 @@ Some of these blogs make over $100k a month, others are just a hobby for their o
       <Spacer_7/>
       <div className="post-page-post-footer-div">
         <div className="post-page-footer-pic-div">
-          <img src={profilePic} alt="avatar" className="post-page-footer-pic"/>
+          <img src={pic} alt="avatar" className="post-page-footer-pic"/>
         </div>
         <div className="post-page-footer-info">
           <p className="post-page-footer-written">Written by</p>
-          <p className="post-page-footer-author">Shedrack Eze</p>
+          <p className="post-page-footer-author">{username}</p>
           <p className="post-page-footer-job">CEO Team App</p>
         </div>
       </div>
@@ -95,7 +97,7 @@ Some of these blogs make over $100k a month, others are just a hobby for their o
           <p className="comment-invitation">Join the conversation</p>
         </div>
         <div className="new-comment-div">
-          <img src={profilePic} alt="avatar" className="new-comment-pic" />
+          <img src={pic} alt="avatar" className="new-comment-pic" />
           <input type="text"  placeholder="Comments" className="new-comment-input"/>
         </div>
         <div className="comment"></div>

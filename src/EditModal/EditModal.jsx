@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import "./EditModal.css"
-import { editPost } from '../API/API';
+import { editPost, fetchPost } from '../API/API.js';
+import { PaginationStore } from '../States/PaginationStore.js';
 
 const EditModal = ({setPosts,isEditModal,setIsEditModal,id,category,title,description}) => {
+  const {limit,offset,resetLimit,resetOffset} = PaginationStore();
   const [editModalCategory,setEditModalCategory] = useState(category);
   const [editModalTitle,setEditModalTitle] = useState(title);
   const [editModalDescription,setEditModalDescription] = useState(description);
@@ -12,6 +14,9 @@ const EditModal = ({setPosts,isEditModal,setIsEditModal,id,category,title,descri
   }
   const handleEditSubmit = () => {
     editPost(setPosts,editModalCategory,editModalTitle,editModalDescription,id)
+    resetLimit();
+    resetOffset();
+    fetchPost(setPosts,offset,limit)
     setIsEditModal(false);
     document.body.classList.remove("overflowY")
   }
