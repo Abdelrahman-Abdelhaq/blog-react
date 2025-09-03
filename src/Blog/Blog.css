@@ -9,11 +9,10 @@ html,body{
 }
 .background{
     background-image: url('../assets/backgroundTest.svg');
-    background-position: right 0px top 39.44vh;
+    background-position: right 0px top 340px;
     background-size: 100vw ;
     background-repeat: no-repeat;
     position: relative;
-    z-index: 1;
 }
 .main-div{
     width: 89vw;
