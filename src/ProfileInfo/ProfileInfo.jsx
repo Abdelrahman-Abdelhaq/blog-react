@@ -1,40 +1,23 @@
-import { infoCardStore } from "../States/InfoCardStore";
-import { profilePicStore } from "../States/ProfilePicStore";
-import { userStore } from "../States/UserStore";
+import { userStore } from "../States/UserStore"
 import "./ProfileInfo.css"
-import { Link } from "react-router";
+import {Link} from "react-router"
 
 const ProfileInfo = () => {
-  const {username,email} = userStore();
-  const {pic} = profilePicStore();
-  const {modal,setModal} = infoCardStore();
-  const handleClose = () => {
-    setModal(false);
-  }
-  const handleEdit = () => {
-    setModal(false);
-  }
-  if (modal === false) return null;
+  const {firstName,lastName,email} = userStore();
   return (
-    <div className='profile-info-card'>
-      <div className='profile-card-div'>
-        <div className='profile-card-background'></div>
-        <div className='profile-card-avatar-div'>
-            <img src={pic} alt="avatar" className='profile-card-avatar' />
-        </div>
-        <div className='profile-card-user-info-div'>
-            <p className='profile-card-user-name'>{username}</p>
-            <p className='profile-card-user-email'>{email}</p>
-        </div>
-        <hr  className='profile-card-hr'/>
-        <div className='profile-card-btn-div'>
-            <button className='profile-card-close-btn' onClick={handleClose}>Close</button>
-            <Link to={'/edit'}><button className='profile-card-edit-btn' onClick={handleEdit}>
-              Edit Profile
-              </button>
-              </Link>
-        </div>
-      </div>
+    <div className="profile-info-div">
+          <p className="profile-info-title">{firstName} Profile Info</p>
+          <div className="user-info-spacer2"></div>
+          <p className="profile-info-username-p">Username:</p>
+          <p className="profile-info-user">{firstName} {lastName}</p>
+          <p className="profile-info-email-p">Email:</p>
+          <p className="profile-info-email">{email}</p>
+          <div className="profile-info-btn-div">
+            <Link to={"/blog"}>
+            <button className="profile-info-blog-btn">Blog</button>
+            </Link>
+            <button className="profile-info-edit-btn">Edit Info</button>
+          </div>
     </div>
   )
 }

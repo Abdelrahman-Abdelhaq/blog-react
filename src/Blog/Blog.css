@@ -10,7 +10,7 @@ html,body{
 .background{
     background-image: url('../assets/backgroundTest.svg');
     background-position: right 0px top 340px;
-    background-size: 100vw ;
+    background-size: contain ;
     background-repeat: no-repeat;
     position: relative;
 }

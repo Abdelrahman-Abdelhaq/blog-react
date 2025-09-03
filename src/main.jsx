@@ -7,6 +7,7 @@ import Signup from './Signup/Signup.jsx'
 import Blog from './Blog/Blog.jsx'
 import PostPage from './PostPage/PostPage.jsx'
 import ErrorPath from './404/ErrorPath.jsx'
+import ProfilePage from './ProfilePage/ProfilePage.jsx'
 const Router = createBrowserRouter([
     {
       path:'/',
@@ -25,8 +26,8 @@ const Router = createBrowserRouter([
       element:<PostPage/>
     },
     {
-      path:"/edit",
-      element:<></>
+      path:"/profile",
+      element: <ProfilePage></ProfilePage>
     },
     {
       path:"*",

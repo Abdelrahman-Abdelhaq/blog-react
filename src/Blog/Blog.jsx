@@ -6,7 +6,6 @@ import Footer from "../Footer/Footer.jsx"
 import Addmodal from "../Addmodal/Addmodal.jsx"
 import { useEffect, useState } from "react"
 import ProfilePic from "../ProfilePic/ProfilePic.jsx"
-import ProfileInfo from "../ProfileInfo/ProfileInfo.jsx"
 import { fetchPost } from "../API/API.js"
 import { PaginationStore } from "../States/PaginationStore.js"
 import { postsStore } from "../States/PostsStore";
@@ -22,7 +21,6 @@ const Blog = () => {
   return (
     <div className="background">
       <ProfilePic/>
-      <ProfileInfo/>
       <Spacer_1></Spacer_1>
       <Headers/>
       <Spacer_2/>
