@@ -13,6 +13,7 @@ html,body{
     background-size: 100vw ;
     background-repeat: no-repeat;
     position: relative;
+    z-index: 1;
 }
 .main-div{
     width: 89vw;
