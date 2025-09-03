@@ -9,12 +9,11 @@ const axiosClient = axios.create({
 });
 
 export const fetchPost = async (setPosts,offset,limit) =>{
-    const res = await axiosClient.get(`/posts?limit=${limit}&offset=${offset}`)
-    if(res.data == []){
-        setPosts(dummyData)
-    }
-    else{
+    try {
+        const res = await axiosClient.get(`/posts?limit=${limit}&offset=${offset}`)
         setPosts(p => [...p,...res.data])
+    } catch (error) {
+        setPosts(dummyData)
     }
 } 
 
