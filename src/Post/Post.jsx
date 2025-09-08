@@ -8,7 +8,7 @@ import { profilePicStore } from "../States/ProfilePicStore"
 import { userStore } from "../States/UserStore"
 
 const Post = ({post,setPosts}) => {
-  const {username} = userStore()
+  const {firstName} = userStore()
   const profilePic = profilePicStore((state) => state.pic)
   const newDate = moment(post.post_date).format('DD-MMM-YYYY');
   const handleDelete= () => {
@@ -32,7 +32,7 @@ const Post = ({post,setPosts}) => {
                 <div className="content-info">
                     <img src={profilePic} alt="avatar" className="content-avatar" />
                     <div className="content-data">
-                        <p className="content-author">{username}</p>
+                        <p className="content-author">{`${firstName}`}</p>
                         <p className="content-date">{newDate}</p>
                     </div>
                 </div>
