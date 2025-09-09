@@ -1,0 +1,66 @@
+.profile-modal-edit-firstname{
+    height: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.profile-modal-edit-lastname{
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.profile-modal-edit-email{
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.profile-modal-edit-btns{
+    height: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+.profile-modal-edit-input{
+    width: 100%;
+    height: 26px;
+    border: none;
+    border-radius: 8px;
+    outline: 1px solid rgb(111, 27, 237);
+    padding: 6px 6px 6px 12px;
+    box-sizing: border-box;
+}
+.profile-modal-edit-info{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    cursor: pointer;
+    outline: 1px solid rgb(111, 27, 237);
+    color: rgb(111, 27, 237);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.profile-modal-edit-apply{
+    width: 80px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(111, 27, 237);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.overflowY{
+    overflow-y: hidden;
+    touch-action: none;
+}

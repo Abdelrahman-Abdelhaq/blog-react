@@ -1,0 +1,82 @@
+import { profileStore } from "../States/ProfileStore";
+import { userStore } from "../States/UserStore";
+import "./ProfileModalEdit.css";
+
+const ProfileModalEdit = () => {
+  const { setIsInfo, setIsEdit } = profileStore();
+  const {
+    firstName,
+    lastName,
+    email,
+    setFirstName,
+    setLastName,
+    setEmail,
+    editFirst,
+    editLast,
+    editEmail,
+    setEditFirst,
+    setEditLast,
+    setEditEmail,
+  } = userStore();
+  const handleInfo = () => {
+    setIsEdit(false);
+    setIsInfo(true);
+  };
+  const handleApply = () => {
+    setFirstName(editFirst == "" ? firstName : editFirst);
+    setLastName(editLast == "" ? lastName : editLast);
+    setEmail(editEmail == "" ? email : editEmail);
+    setEditFirst("");
+    setEditLast("");
+    setEditEmail("");
+    setIsEdit(false);
+    document.body.classList.remove("overflowY");
+  };
+  return (
+    <>
+      <div className="profile-modal-edit-firstname">
+        <input
+          type="text"
+          className="profile-modal-edit-input"
+          placeholder={firstName}
+          value={editFirst}
+          onChange={(e) => {
+            setEditFirst(e.target.value);
+          }}
+        />
+      </div>
+      <div className="profile-modal-edit-lastname">
+        <input
+          type="text"
+          className="profile-modal-edit-input"
+          placeholder={lastName}
+          value={editLast}
+          onChange={(e) => {
+            setEditLast(e.target.value);
+          }}
+        />
+      </div>
+      <div className="profile-modal-edit-email">
+        <input
+          type="text"
+          className="profile-modal-edit-input"
+          placeholder={email}
+          value={editEmail}
+          onChange={(e) => {
+            setEditEmail(e.target.value);
+          }}
+        />
+      </div>
+      <div className="profile-modal-edit-btns">
+        <button className="profile-modal-edit-info" onClick={handleInfo}>
+          Info
+        </button>
+        <button className="profile-modal-edit-apply" onClick={handleApply}>
+          Apply
+        </button>
+      </div>
+    </>
+  );
+};
+
+export default ProfileModalEdit;

@@ -1,0 +1,42 @@
+.profile-modal-background{
+    min-height: 100dvh;
+    width: 100vw;
+    background-color: rgba(209, 209, 209, 0.523);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.overflowY{
+    overflow-y: hidden;
+    touch-action: none;
+}
+.profile-modal{
+    height: 360px;
+    width: 19.5vw;
+    background-color: white;
+    box-shadow: gray 0 0 10px 2px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 2%;
+    top: 10%;
+}
+.profile-modal-header{
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(to bottom right,rgb(111, 27, 237),rgb(65, 13, 77));
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: center;
+}
+.profile-modal-pic{
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: relative;
+    top: 56%;
+}

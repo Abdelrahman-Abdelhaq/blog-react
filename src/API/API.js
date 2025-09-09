@@ -14,6 +14,7 @@ export const fetchPost = async (setPosts,offset,limit) =>{
         setPosts(p => [...p,...res.data])
     } catch (error) {
         setPosts(dummyData)
+        console.log(error)
     }
 } 
 
