@@ -16,8 +16,8 @@ const ProfileModalEdit = () => {
     editEmail,
     setEditFirst,
     setEditLast,
-    setEditEmail,
   } = userStore();
+  const setEditEmail = userStore((state) => state.setEditEmail);
   const handleInfo = () => {
     setIsEdit(false);
     setIsInfo(true);
