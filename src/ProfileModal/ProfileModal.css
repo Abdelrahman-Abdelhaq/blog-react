@@ -13,7 +13,7 @@
 }
 .profile-modal{
     height: 360px;
-    width: 19.5vw;
+    width: clamp(280px,19.5vw,320px);
     background-color: white;
     box-shadow: gray 0 0 10px 2px;
     border-radius: 12px;
