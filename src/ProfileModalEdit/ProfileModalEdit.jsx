@@ -3,20 +3,19 @@ import { userStore } from "../States/UserStore";
 import "./ProfileModalEdit.css";
 
 const ProfileModalEdit = () => {
-  const { setIsInfo, setIsEdit } = profileStore();
-  const {
-    firstName,
-    lastName,
-    email,
-    setFirstName,
-    setLastName,
-    setEmail,
-    editFirst,
-    editLast,
-    editEmail,
-    setEditFirst,
-    setEditLast,
-  } = userStore();
+  const setIsInfo = profileStore((state) => state.setIsInfo);
+  const setIsEdit = profileStore((state) => state.setIsEdit);
+  const firstName = userStore((state) => state.firstName);
+  const lastName = userStore((state) => state.lastName);
+  const email = userStore((state) => state.email);
+  const setFirstName = userStore((state) => state.setFirstName);
+  const setLastName = userStore((state) => state.setLastName);
+  const setEmail = userStore((state) => state.setEmail);
+  const editFirst = userStore((state) => state.editFirst);
+  const editLast = userStore((state) => state.editLast);
+  const editEmail = userStore((state) => state.editEmail);
+  const setEditFirst = userStore((state) => state.setEditFirst);
+  const setEditLast = userStore((state) => state.setEditLast);
   const setEditEmail = userStore((state) => state.setEditEmail);
   const handleInfo = () => {
     setIsEdit(false);

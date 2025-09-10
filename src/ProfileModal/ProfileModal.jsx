@@ -1,6 +1,6 @@
 import ProfileModalEdit from "../ProfileModalEdit/ProfileModalEdit";
 import ProfileModalInfo from "../ProfileModalInfo/ProfileModalInfo";
-import { profilePicStore } from "../States/ProfilePicStore";
+import { picStore } from "../States/PicStore";
 import { profileStore } from "../States/ProfileStore";
 import { userStore } from "../States/UserStore";
 import "./ProfileModal.css";
@@ -8,7 +8,7 @@ import "./ProfileModal.css";
 import React from "react";
 
 const ProfileModal = () => {
-  const { pic } = profilePicStore();
+  const { pic } = picStore();
   const { isInfo, isEdit, setIsInfo, setIsEdit } = profileStore();
 
   return (

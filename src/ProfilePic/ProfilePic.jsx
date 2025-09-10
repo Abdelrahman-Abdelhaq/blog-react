@@ -1,9 +1,9 @@
-import { profilePicStore } from "../States/ProfilePicStore";
+import { picStore } from "../States/PicStore";
 import { profileStore } from "../States/ProfileStore";
 import "./ProfilePic.css";
 import { Link } from "react-router";
 const ProfilePic = () => {
-  const { pic } = profilePicStore();
+  const { pic } = picStore();
   const { setIsInfo } = profileStore();
   const handleClick = () => {
     setIsInfo(true);

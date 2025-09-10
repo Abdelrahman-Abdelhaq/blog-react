@@ -1,0 +1,6 @@
+.loading-spinner{
+    width: clamp(80px,12vw,140px);
+    height: clamp(80px, 12vw, 140px);
+    position: absolute;
+    background-image: url("/spinner2.svg");
+}

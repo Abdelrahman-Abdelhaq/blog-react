@@ -8,19 +8,14 @@ const axiosClient = axios.create({
     }
 });
 
-export const fetchPost = async (setPosts,offset,limit) =>{
-    try {
-        const res = await axiosClient.get(`/posts?limit=${limit}&offset=${offset}`)
-        setPosts(p => [...p,...res.data])
-    } catch (error) {
-        setPosts(dummyData)
-        console.log(error)
-    }
-} 
+export const getPosts = async (offset,limit) => {
+    const res = await axiosClient.get(`/posts?limit=${limit}&offset=${offset}`)
+    return res.data
+}
 
-export const deletePost = async (post_id,setPosts) =>{
+export const deletePost = async (post_id) =>{
     const res = await axiosClient.delete(`/posts/${post_id}`)
-    setPosts(p => p.filter((p)=>(p.post_id !== post_id)))
+    // setPosts(p => p.filter((p)=>(p.post_id !== post_id)))
 }
 
 export const addPost = async(Post_category,Post_title,Post_description,setPosts) => {
