@@ -7,10 +7,6 @@
     left: 0;
     z-index: 1;
 }
-.overflowY{
-    overflow-y: hidden;
-    touch-action: none;
-}
 .profile-modal{
     height: 360px;
     width: clamp(280px,19.5vw,320px);

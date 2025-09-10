@@ -7,7 +7,7 @@ const ProfileModalInfo = () => {
   const { setIsInfo, setIsEdit } = profileStore();
   const handleClose = () => {
     setIsInfo(false);
-    document.body.classList.remove("overflowY");
+    document.documentElement.classList.remove("overflowY");
   };
   const handleEdit = () => {
     setIsInfo(false);

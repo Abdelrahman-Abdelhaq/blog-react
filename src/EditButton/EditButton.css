@@ -1,8 +1,3 @@
-.overflowY{
-    height: 100vh;
-    overflow: hidden;
-    touch-action: none;
-}
 .edit-post-div {
     position: absolute;
     top: 52%;

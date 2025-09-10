@@ -7,7 +7,7 @@ const EditButton = ({ id, category, title, description }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const handleEditModal = () => {
     setIsEditModal(true);
-    document.body.classList.add("overflowY");
+    document.documentElement.classList.add("overflowY");
   };
   return (
     <div className="edit-post-div">

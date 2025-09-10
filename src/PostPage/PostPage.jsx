@@ -26,12 +26,12 @@ const PostPage = () => {
   };
   useEffect(() => {
     if (mobileList === true) {
-      document.body.classList.add("overflowY");
+      document.documentElement.classList.add("overflowY");
     } else {
-      document.body.classList.remove("overflowY");
+      document.documentElement.classList.remove("overflowY");
     }
     return () => {
-      document.body.classList.remove("overflowY");
+      document.documentElement.classList.remove("overflowY");
     };
   }, [mobileList]);
   return (

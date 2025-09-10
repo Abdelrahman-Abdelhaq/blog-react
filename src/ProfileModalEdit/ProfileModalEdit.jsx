@@ -29,7 +29,7 @@ const ProfileModalEdit = () => {
     setEditLast("");
     setEditEmail("");
     setIsEdit(false);
-    document.body.classList.remove("overflowY");
+    document.documentElement.classList.remove("overflowY");
   };
   return (
     <>

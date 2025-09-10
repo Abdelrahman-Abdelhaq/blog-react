@@ -1,8 +1,3 @@
-.overflowY{
-    overflow-y: hidden;
-    touch-action: none;
-    height: 100vh;
-}
 .post-page-main-div{
     width: 82vw;
     margin: auto;

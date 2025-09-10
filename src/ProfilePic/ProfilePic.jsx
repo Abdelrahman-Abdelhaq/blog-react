@@ -7,7 +7,7 @@ const ProfilePic = () => {
   const { setIsInfo } = profileStore();
   const handleClick = () => {
     setIsInfo(true);
-    document.body.classList.add("overflowY");
+    document.documentElement.classList.add("overflowY");
   };
   return (
     <img

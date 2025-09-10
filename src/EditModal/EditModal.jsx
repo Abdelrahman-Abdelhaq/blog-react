@@ -16,14 +16,14 @@ const EditModal = ({
   const [editModalDescription, setEditModalDescription] = useState(description);
   const closeEditModal = () => {
     setIsEditModal(false);
-    document.body.classList.remove("overflowY");
+    document.documentElement.classList.remove("overflowY");
   };
   const handleEditSubmit = () => {
     editPost(editModalCategory, editModalTitle, editModalDescription, id);
     resetLimit();
     resetOffset();
     setIsEditModal(false);
-    document.body.classList.remove("overflowY");
+    document.documentElement.classList.remove("overflowY");
   };
   if (isEditModal === false) return null;
   return (

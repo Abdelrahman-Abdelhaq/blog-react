@@ -13,10 +13,7 @@
     box-shadow: rgb(182, 182, 182) 0 0 10px 2px;
 
 }
-.overflowY {
-    overflow-y: hidden;
-    touch-action: none;
-}
+
 
 @media screen and (max-width: 481px) {
 .blog-profile-pic{
