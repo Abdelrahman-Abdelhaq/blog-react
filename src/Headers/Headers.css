@@ -110,10 +110,11 @@
     width: clamp(380px, 71.12vw, 1200px);
 }
 .title-3{
+    width: 340px;
     font-size: clamp(16px, 1.4vw, 30px);
     text-align: center;
 }
 .search-div{
-    width: clamp(344px, 22.23vw, 380px);
+    width: clamp(330px, 22.23vw, 380px);
 }
 }
