@@ -1,5 +1,4 @@
 import axios from "axios";
-import { dummyData } from "./Dummy";
 
 const axiosClient = axios.create({
     baseURL:"http://localhost:3000",
@@ -38,5 +37,4 @@ export const editPost = async (category,title,desc,id) => {
         post_description:desc
     })
     return res.data
-    // setPosts(p => p.map(post => post.post_id === post_id ? { ...post, ...res.data } : post));
 }
