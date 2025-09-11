@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from "react";
 import "./Addmodal.css";
-import { addPost } from "../API/API";
 import { newPostStore } from "../States/NewPostStore";
+import { modalStore } from "../States/ModalStore";
+import { postsStore } from "../States/PostsStore";
 
 const Addmodal = () => {
   const isActive = newPostStore((state) => state.isActive);
   const closeModal = newPostStore((state) => state.deactivate);
-  const [categoryValue, setCategoryValue] = useState("Design");
-  const [titleValue, setTitleValue] = useState("Post Title");
-  const [descriptionValue, setDescriptionValue] = useState("Post Description");
+  const category = modalStore((state) => state.category);
+  const title = modalStore((state) => state.title);
+  const desc = modalStore((state) => state.desc);
+  const setCategory = modalStore((state) => state.setCategory);
+  const setTitle = modalStore((state) => state.setTitle);
+  const setDesc = modalStore((state) => state.setDesc);
+  const addPost = postsStore((state) => state.addPost);
   const handleSubmit = () => {
-    addPost(categoryValue, titleValue, descriptionValue, setPosts);
-    setTitleValue("Post Title");
-    setDescriptionValue("Post Description");
+    addPost(category, title, desc);
+    setCategory("Design");
+    setTitle("Post Title");
+    setDesc("Post Description");
     handleClose();
   };
   const handleClose = () => {
+    setCategory("Design");
+    setTitle("Post Title");
+    setDesc("Post Description");
     closeModal();
-    document.body.classList.remove("overflowY");
+    document.documentElement.classList.remove("overflowY");
   };
   if (isActive === false) return null;
   return (
@@ -30,9 +38,9 @@ const Addmodal = () => {
           <p className="m-g-p">Category:</p>
           <select
             className="category-select"
-            value={categoryValue}
+            value={category}
             onChange={(e) => {
-              setCategoryValue(e.target.value);
+              setCategory(e.target.value);
             }}
           >
             <option value="Design">Design</option>
@@ -48,9 +56,9 @@ const Addmodal = () => {
             type="text"
             className="m-t-i"
             placeholder="Post Title"
-            value={titleValue}
+            value={title}
             onChange={(e) => {
-              setTitleValue(e.target.value);
+              setTitle(e.target.value);
             }}
           />
         </div>
@@ -60,9 +68,9 @@ const Addmodal = () => {
             type="text"
             className="m-d-i"
             placeholder="Post Description"
-            value={descriptionValue}
+            value={desc}
             onChange={(e) => {
-              setDescriptionValue(e.target.value);
+              setDesc(e.target.value);
             }}
           />
         </div>

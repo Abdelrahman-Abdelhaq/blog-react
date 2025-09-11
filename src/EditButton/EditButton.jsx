@@ -3,7 +3,7 @@ import "./EditButton.css";
 import EditModal from "../EditModal/EditModal";
 import { useState } from "react";
 
-const EditButton = ({ id, category, title, description }) => {
+const EditButton = ({ id }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const handleEditModal = () => {
     setIsEditModal(true);
@@ -16,9 +16,6 @@ const EditButton = ({ id, category, title, description }) => {
         isEditModal={isEditModal}
         setIsEditModal={setIsEditModal}
         id={id}
-        category={category}
-        title={title}
-        description={description}
       />
     </div>
   );

@@ -27,7 +27,7 @@ const Blog = () => {
   return (
     <div className="background">
       <ProfilePic />
-      <Spacer_1></Spacer_1>
+      <Spacer_1 />
       <Headers />
       {isInfo || isEdit ? <ProfileModal></ProfileModal> : null}
       <Spacer_2 />
@@ -39,12 +39,7 @@ const Blog = () => {
           ) : error ? (
             error
           ) : (
-            posts.map((post) => (
-              <Post
-                key={`${post.post_id}-${post.post_title}-${post.post_description}`}
-                post={post}
-              />
-            ))
+            posts.map((post) => <Post key={post.post_id} id={post.post_id} />)
           )}
         </div>
       </div>

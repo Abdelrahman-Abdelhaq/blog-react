@@ -1,27 +1,34 @@
 import { useState } from "react";
 import "./EditModal.css";
 import { PaginationStore } from "../States/PaginationStore.js";
+import { modalStore } from "../States/ModalStore.js";
+import { postsStore } from "../States/PostsStore.js";
 
-const EditModal = ({
-  isEditModal,
-  setIsEditModal,
-  id,
-  category,
-  title,
-  description,
-}) => {
+const EditModal = ({ isEditModal, setIsEditModal, id }) => {
+  const posts = postsStore((state) => state.posts);
+  const post = posts.find((p) => p.post_id === id);
   const { resetLimit, resetOffset } = PaginationStore();
-  const [editModalCategory, setEditModalCategory] = useState(category);
-  const [editModalTitle, setEditModalTitle] = useState(title);
-  const [editModalDescription, setEditModalDescription] = useState(description);
+  const eCategory = modalStore((state) => state.eCategory);
+  const eTitle = modalStore((state) => state.eTitle);
+  const eDesc = modalStore((state) => state.eDesc);
+  const setECategory = modalStore((state) => state.setECategory);
+  const setETitle = modalStore((state) => state.setETitle);
+  const setEDesc = modalStore((state) => state.setEDesc);
+  const updatePost = postsStore((state) => state.updatePost);
   const closeEditModal = () => {
     setIsEditModal(false);
+    setECategory("");
+    setETitle("");
+    setEDesc("");
     document.documentElement.classList.remove("overflowY");
   };
   const handleEditSubmit = () => {
-    editPost(editModalCategory, editModalTitle, editModalDescription, id);
-    resetLimit();
-    resetOffset();
+    updatePost(
+      eCategory === "" ? post.post_category : eCategory,
+      eTitle === "" ? post.post_title : eTitle,
+      eDesc === "" ? post.post_description : eDesc,
+      id
+    );
     setIsEditModal(false);
     document.documentElement.classList.remove("overflowY");
   };
@@ -33,8 +40,8 @@ const EditModal = ({
         <p className="edit-modal-category-p">New Category:</p>
         <select
           className="edit-modal-category"
-          value={editModalCategory}
-          onChange={(e) => setEditModalCategory(e.target.value)}
+          value={eCategory}
+          onChange={(e) => setECategory(e.target.value)}
         >
           <option value="Design">Design</option>
           <option value="Product">Product</option>
@@ -46,17 +53,17 @@ const EditModal = ({
         <input
           type="text"
           className="edit-modal-title"
-          placeholder="Enter New Title"
-          value={editModalTitle}
-          onChange={(e) => setEditModalTitle(e.target.value)}
+          placeholder={post.post_title}
+          value={eTitle}
+          onChange={(e) => setETitle(e.target.value)}
         />
         <p className="edit-modal-description-p">New Description:</p>
         <input
           type="text"
           className="edit-modal-description"
-          placeholder="Enter New Description"
-          value={editModalDescription}
-          onChange={(e) => setEditModalDescription(e.target.value)}
+          placeholder={post.post_description}
+          value={eDesc}
+          onChange={(e) => setEDesc(e.target.value)}
         />
         <button onClick={closeEditModal} className="edit-modal-close">
           Close

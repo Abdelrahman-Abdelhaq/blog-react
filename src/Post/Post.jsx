@@ -2,27 +2,25 @@ import "./Post.css";
 import image from "../assets/post-image.svg";
 import { Link } from "react-router";
 import moment from "moment";
-import { deletePost, editPost } from "../API/API";
 import EditButton from "../EditButton/EditButton";
 import { picStore } from "../States/PicStore";
 import { userStore } from "../States/UserStore";
+import { postsStore } from "../States/PostsStore";
 
-const Post = ({ post }) => {
-  const { firstName } = userStore();
+const Post = ({ id }) => {
+  const posts = postsStore((state) => state.posts);
+  const post = posts.find((p) => p.post_id === id);
+  const firstName = userStore((state) => state.firstName);
   const profilePic = picStore((state) => state.pic);
   const newDate = moment(post.post_date).format("DD-MMM-YYYY");
+  const deletePost = postsStore((state) => state.deletePost);
   const handleDelete = () => {
-    deletePost(post.post_id);
+    deletePost(id);
   };
   return (
     <div className="post">
       <div className="content">
-        <EditButton
-          id={post.post_id}
-          category={post.post_category}
-          title={post.post_title}
-          description={post.post_description}
-        />
+        <EditButton id={post.post_id} />
         <div className="delete-post-div">
           <button className="delete-post-btn" onClick={handleDelete}></button>
         </div>

@@ -1,16 +1,14 @@
-import React from 'react'
-import "./Addpost.css"
-import { newPostStore } from '../States/NewPostStore'
+import React from "react";
+import "./Addpost.css";
+import { newPostStore } from "../States/NewPostStore";
 
 const Addpost = () => {
-  const activateNewPostModal = newPostStore((state) => state.activate)
+  const activateNewPostModal = newPostStore((state) => state.activate);
   const handleOpenModal = () => {
-    activateNewPostModal()
-    document.body.classList.add("overflowY")
-  }
-  return (
-        <button className='add-post' onClick={handleOpenModal}></button>
-  )
-}
+    activateNewPostModal();
+    document.documentElement.classList.add("overflowY");
+  };
+  return <button className="add-post" onClick={handleOpenModal}></button>;
+};
 
-export default Addpost
+export default Addpost;
