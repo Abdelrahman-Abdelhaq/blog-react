@@ -6,6 +6,7 @@ const ProfileModalInfo = () => {
   const { firstName, lastName, email } = userStore();
   const { setIsInfo, setIsEdit } = profileStore();
   const closeRef = useRef(null);
+  const editRef = useRef(null);
   const handleClose = () => {
     setIsInfo(false);
     document.documentElement.classList.remove("overflowY");
@@ -16,6 +17,7 @@ const ProfileModalInfo = () => {
   };
   const handleKeyDown = (e) => {
     if (e.key === "Escape") closeRef.current.click();
+    if (e.key === "Tab") editRef.current.click();
   };
   return (
     <>
@@ -35,7 +37,12 @@ const ProfileModalInfo = () => {
         >
           Close
         </button>
-        <button className="profile-modal-edit" onClick={handleEdit}>
+        <button
+          className="profile-modal-edit"
+          onClick={handleEdit}
+          ref={editRef}
+          onKeyDown={handleKeyDown}
+        >
           Edit Info
         </button>
       </div>
