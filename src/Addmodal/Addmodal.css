@@ -12,7 +12,7 @@
 .n-p-modal{
     box-sizing: border-box;
     width: clamp(300px,56vw,650px);
-    height: 560px;
+    height: 580px;
     background-color: white;
     display: flex;
     flex-direction: column;

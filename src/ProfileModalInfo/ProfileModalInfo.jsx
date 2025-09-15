@@ -13,6 +13,9 @@ const ProfileModalInfo = () => {
     setIsInfo(false);
     setIsEdit(true);
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") handleClose();
+  };
   return (
     <>
       <div className="profile-modal-username">
@@ -22,7 +25,12 @@ const ProfileModalInfo = () => {
         <p className="profile-modal-email-p">{email}</p>
       </div>
       <div className="profile-modal-info-btns">
-        <button className="profile-modal-close" onClick={handleClose}>
+        <button
+          className="profile-modal-close"
+          onClick={handleClose}
+          autoFocus
+          onKeyDown={handleKeyDown}
+        >
           Close
         </button>
         <button className="profile-modal-edit" onClick={handleEdit}>

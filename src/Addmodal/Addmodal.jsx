@@ -27,6 +27,12 @@ const Addmodal = () => {
     closeModal();
     document.documentElement.classList.remove("overflowY");
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleSubmit();
+    if (e.key === "Escape") handleClose();
+  };
+
   if (isActive === false) return null;
   return (
     <div className="m-b-div">
@@ -60,6 +66,8 @@ const Addmodal = () => {
             onChange={(e) => {
               setTitle(e.target.value);
             }}
+            onKeyDown={handleKeyDown}
+            autoFocus
           />
         </div>
         <div className="m-d-div">
@@ -72,6 +80,7 @@ const Addmodal = () => {
             onChange={(e) => {
               setDesc(e.target.value);
             }}
+            onKeyDown={handleKeyDown}
           />
         </div>
         <div className="m-text-div">
