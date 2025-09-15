@@ -2,6 +2,7 @@ import "./Addmodal.css";
 import { newPostStore } from "../States/NewPostStore";
 import { modalStore } from "../States/ModalStore";
 import { postsStore } from "../States/PostsStore";
+import { useRef } from "react";
 
 const Addmodal = () => {
   const isActive = newPostStore((state) => state.isActive);
@@ -13,6 +14,8 @@ const Addmodal = () => {
   const setTitle = modalStore((state) => state.setTitle);
   const setDesc = modalStore((state) => state.setDesc);
   const addPost = postsStore((state) => state.addPost);
+  const submitRef = useRef(null);
+  const closeRef = useRef(null);
   const handleSubmit = () => {
     addPost(category, title, desc);
     setCategory("Design");
@@ -29,8 +32,8 @@ const Addmodal = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") handleSubmit();
-    if (e.key === "Escape") handleClose();
+    if (e.key === "Enter") submitRef.current.click();
+    if (e.key === "Escape") closeRef.current.click();
   };
 
   if (isActive === false) return null;
@@ -92,10 +95,10 @@ const Addmodal = () => {
           <input type="file" className="m-p-i" />
         </div>
         <div className="m-btn-div">
-          <button className="m-btn-c" onClick={handleClose}>
+          <button className="m-btn-c" onClick={handleClose} ref={closeRef}>
             Close
           </button>
-          <button className="m-btn-s" onClick={handleSubmit}>
+          <button className="m-btn-s" onClick={handleSubmit} ref={submitRef}>
             Submit
           </button>
         </div>
