@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./ProfileModalInfo.css";
 import { userStore } from "../States/UserStore";
 import { profileStore } from "../States/ProfileStore";
 const ProfileModalInfo = () => {
   const { firstName, lastName, email } = userStore();
   const { setIsInfo, setIsEdit } = profileStore();
+  const closeRef = useRef(null);
   const handleClose = () => {
     setIsInfo(false);
     document.documentElement.classList.remove("overflowY");
@@ -14,7 +15,7 @@ const ProfileModalInfo = () => {
     setIsEdit(true);
   };
   const handleKeyDown = (e) => {
-    if (e.key === "Escape") handleClose();
+    if (e.key === "Escape") closeRef.current.click();
   };
   return (
     <>
@@ -28,6 +29,7 @@ const ProfileModalInfo = () => {
         <button
           className="profile-modal-close"
           onClick={handleClose}
+          ref={closeRef}
           autoFocus
           onKeyDown={handleKeyDown}
         >
