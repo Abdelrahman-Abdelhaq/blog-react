@@ -10,14 +10,16 @@ const Addmodal = () => {
   const category = modalStore((state) => state.category);
   const title = modalStore((state) => state.title);
   const desc = modalStore((state) => state.desc);
+  const para = modalStore((state) => state.para);
   const setCategory = modalStore((state) => state.setCategory);
   const setTitle = modalStore((state) => state.setTitle);
   const setDesc = modalStore((state) => state.setDesc);
+  const setPara = modalStore((state) => state.setPara);
   const addPost = postsStore((state) => state.addPost);
   const submitRef = useRef(null);
   const closeRef = useRef(null);
   const handleSubmit = () => {
-    addPost(category, title, desc);
+    addPost(category, title, desc, para);
     setCategory("Design");
     setTitle("Post Title");
     setDesc("Post Description");
@@ -71,6 +73,7 @@ const Addmodal = () => {
             }}
             onKeyDown={handleKeyDown}
             autoFocus
+            maxLength={24}
           />
         </div>
         <div className="m-d-div">
@@ -84,11 +87,18 @@ const Addmodal = () => {
               setDesc(e.target.value);
             }}
             onKeyDown={handleKeyDown}
+            maxLength={60}
           />
         </div>
         <div className="m-text-div">
           <p className="m-text-p">Text:</p>
-          <input type="text" className="m-text-i" placeholder="Post Text" />
+          <input
+            type="text"
+            className="m-text-i"
+            placeholder="Post Text"
+            value={para}
+            onChange={(e) => setPara(e.target.value)}
+          />
         </div>
         <div className="m-p-div">
           <p className="m-p-p">Picture:</p>
