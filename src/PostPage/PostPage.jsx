@@ -20,8 +20,7 @@ const PostPage = () => {
   const pic = picStore((state) => state.pic);
   const [mobileList, setMobileList] = useState(false);
   const username = userStore((state) => state.firstName);
-  const params = useParams();
-  const id = params.id;
+  const { id } = useParams();
   const fetchPost = postsStore((state) => state.fetchPost);
   const post = postsStore((state) => state.post);
 
