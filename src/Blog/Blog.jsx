@@ -12,6 +12,7 @@ import ProfileModal from "../ProfileModal/ProfileModal.jsx";
 import { profileStore } from "../States/ProfileStore.js";
 import Loading from "../Loading/Loading.jsx";
 import { searchStore } from "../States/SearchStore.js";
+import { sliceStore } from "../States/SliceStore.js";
 const Blog = () => {
   const error = postsStore((state) => state.error);
   const loading = postsStore((state) => state.loading);
@@ -29,6 +30,7 @@ const Blog = () => {
   const offset = PaginationStore((state) => state.offset);
   const isInfo = profileStore((state) => state.isInfo);
   const isEdit = profileStore((state) => state.isEdit);
+  const slice = sliceStore((state) => state.slice);
 
   useEffect(() => {
     fetchPosts(offset, limit);
@@ -48,9 +50,9 @@ const Blog = () => {
           ) : error ? (
             error
           ) : (
-            filteredPosts.map((post) => (
-              <Post key={post.post_id} id={post.post_id} />
-            ))
+            filteredPosts
+              .slice(0, slice)
+              .map((post) => <Post key={post.post_id} id={post.post_id} />)
           )}
         </div>
       </div>
