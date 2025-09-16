@@ -4,6 +4,7 @@ import { addNewPost, editPost, getPost, getPosts, removePost } from "../API/API"
 
 export const postsStore = create((set,get) => ({
     posts: [],
+    post:{},
     loading: true,
     error: false,
     fetchPosts: async(offset,limit) => {
@@ -21,9 +22,17 @@ export const postsStore = create((set,get) => ({
             })
         }
     },
-    addPost: async (category,title,desc) => {
+    fetchPost: async (id) => {
         try {
-            const data = await addNewPost(category,title,desc)
+            const data = await getPost(id)
+            set({post: data})
+        } catch (err) {
+            console.error(`${err} at states postsstore starting from line 24`)
+        }
+    },
+    addPost: async (category,title,desc,para) => {
+        try {
+            const data = await addNewPost(category,title,desc,para)
             set((state) => ({
                 posts: [...state.posts,data]
             }))    
