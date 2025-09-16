@@ -20,7 +20,7 @@ const Post = ({ id }) => {
   return (
     <div className="post">
       <div className="content">
-        <EditButton id={post.post_id} />
+        {/* <EditButton id={post.post_id} /> */}
         <div className="delete-post-div">
           <button className="delete-post-btn" onClick={handleDelete}></button>
         </div>
