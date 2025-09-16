@@ -2,7 +2,7 @@ import "./Post.css";
 import image from "../assets/post-image.svg";
 import { Link } from "react-router";
 import moment from "moment";
-import EditButton from "../EditButton/EditButton";
+// import EditButton from "../EditButton/EditButton";
 import { picStore } from "../States/PicStore";
 import { userStore } from "../States/UserStore";
 import { postsStore } from "../States/PostsStore";
@@ -20,15 +20,20 @@ const Post = ({ id }) => {
   return (
     <div className="post">
       <div className="content">
+        <Link to={`/postpage/${id}`} className="no-decoration">
+          <img
+            src="post_link.svg"
+            alt="Post Link"
+            className="post-link-arrow"
+          />
+        </Link>
         {/* <EditButton id={post.post_id} /> */}
         <div className="delete-post-div">
           <button className="delete-post-btn" onClick={handleDelete}></button>
         </div>
         <img src={image} alt="image " className="content-img" />
         <p className="content-category">{post.post_category}</p>
-        <Link to={`/postpage/${id}`} className="no-decoration">
-          <p className="content-title">{post.post_title}</p>
-        </Link>
+        <p className="content-title">{post.post_title}</p>
         <p className="content-desc">{post.post_description}</p>
         <div className="content-info">
           <img src={profilePic} alt="avatar" className="content-avatar" />

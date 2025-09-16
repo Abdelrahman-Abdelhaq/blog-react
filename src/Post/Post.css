@@ -111,6 +111,12 @@
     background-size: 16px 16px;
     cursor: pointer;
 }
+.post-link-arrow{
+    position: absolute;
+    right: 0;
+    top: 57.6%;
+    width: clamp(24px,1.67vw,40px);
+}
 @media screen and (max-width: 768px) {
 .post {
         grid-column: span 6;
