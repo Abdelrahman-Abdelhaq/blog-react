@@ -26,7 +26,7 @@ const Post = ({ id }) => {
         </div>
         <img src={image} alt="image " className="content-img" />
         <p className="content-category">{post.post_category}</p>
-        <Link to={"/postpage"} className="no-decoration">
+        <Link to={`/postpage/${id}`} className="no-decoration">
           <p className="content-title">{post.post_title}</p>
         </Link>
         <p className="content-desc">{post.post_description}</p>
