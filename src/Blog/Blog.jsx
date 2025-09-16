@@ -11,10 +11,19 @@ import { postsStore } from "../States/PostsStore";
 import ProfileModal from "../ProfileModal/ProfileModal.jsx";
 import { profileStore } from "../States/ProfileStore.js";
 import Loading from "../Loading/Loading.jsx";
+import { searchStore } from "../States/SearchStore.js";
 const Blog = () => {
   const error = postsStore((state) => state.error);
   const loading = postsStore((state) => state.loading);
   const posts = postsStore((state) => state.posts);
+  const uniquePosts = Array.from(new Set(posts.map(JSON.stringify))).map(
+    JSON.parse
+  );
+  const search = searchStore((state) => state.search);
+  const unifiedSearch = search.toLowerCase();
+  const filteredPosts = uniquePosts.filter((p) =>
+    p.post_title.toLowerCase().includes(unifiedSearch)
+  );
   const fetchPosts = postsStore((state) => state.fetchPosts);
   const limit = PaginationStore((state) => state.limit);
   const offset = PaginationStore((state) => state.offset);
@@ -39,7 +48,9 @@ const Blog = () => {
           ) : error ? (
             error
           ) : (
-            posts.map((post) => <Post key={post.post_id} id={post.post_id} />)
+            filteredPosts.map((post) => (
+              <Post key={post.post_id} id={post.post_id} />
+            ))
           )}
         </div>
       </div>
