@@ -15,11 +15,16 @@ import MobileList from "../MobileList/MobileList";
 import { picStore } from "../States/PicStore";
 import { userStore } from "../States/UserStore";
 import { useParams } from "react-router";
+import { postsStore } from "../States/PostsStore";
 const PostPage = () => {
   const pic = picStore((state) => state.pic);
   const [mobileList, setMobileList] = useState(false);
   const username = userStore((state) => state.firstName);
-  const { id } = useParams;
+  const params = useParams();
+  const id = params.id;
+  const fetchPost = postsStore((state) => state.fetchPost);
+  const post = postsStore((state) => state.post);
+
   const openList = () => {
     setMobileList(true);
   };
@@ -27,6 +32,7 @@ const PostPage = () => {
     setMobileList(false);
   };
   useEffect(() => {
+    fetchPost(id);
     if (mobileList === true) {
       document.documentElement.classList.add("overflowY");
     } else {
@@ -61,9 +67,7 @@ const PostPage = () => {
       <Spacer_5 />
       <div className="post-page-title">
         <div className="post-page-title-p-div">
-          <p className="post-page-title-p">
-            10 Secrets for managing a remote team{" "}
-          </p>
+          <p className="post-page-title-p">{post.post_title}</p>
         </div>
         <div className="post-page-title-info">
           <img src={pic} alt="avatar" className="post-page-title-avatar" />
@@ -78,38 +82,7 @@ const PostPage = () => {
       </div>
       <Spacer_6 />
       <div className="post-page-post-text-div">
-        <p className="post-page-post-text">
-          If you’re thinking of starting a blog of your own, but just don’t have
-          a clue on what to blog about, then fear not! <br />
-          <br />
-          In this article, I have included a whole load of blog examples from a
-          wide variety of different niches, all run on different blogging
-          platforms like WordPress, Joomla! and Drupal. <br /> <br />
-          Since the beginning of the internet, millions and millions and
-          millions of blogs have been created. Many have died due to lost
-          interest or their owners giving up on the idea, while others have
-          thrived and continue to grow, making money and earning their owners a
-          steady income. It’s a constant evolution of content that keeps people
-          coming back for more, especially if these blogs contact highly
-          resourceful material that people find useful and interesting. <br />{" "}
-          <br />
-          Each example listed in this blog post are all different in some way
-          and all bring something unique to their readers & subscribers. I want
-          to show you what is possible and how you can take inspiration from
-          them and create an awesome blog of your own. <br /> <br />
-          Some of these blogs make over $100k a month, others are just a hobby
-          for their owners, but all have the same purpose at their core… the
-          love of writing and sharing information. <br />
-          Some of these blogs make over $100k a month, others are just a hobby
-          for their owners, but all have the same purpose at their core… the
-          love of writing and <br /> <br />
-          Some of these blogs make over $100k a month, others are just a hobby
-          for their owners, but all have the same purpose at their core… the
-          love of writing and sharing information. <br />
-          Some of these blogs make over $100k a month, others are just a hobby
-          for their owners, but all have the same purpose at their core… the
-          love of writing and sharing information.
-        </p>
+        <p className="post-page-post-text">{post.post_paragraph}</p>
       </div>
       <Spacer_7 />
       <div className="post-page-post-footer-div">

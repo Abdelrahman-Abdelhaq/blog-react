@@ -137,6 +137,7 @@ li:hover{
     font-size: clamp(12px,1.25vw,22px);
     text-align: left;
     line-height: 160%;
+    overflow-wrap: break-word;
 }
 .post-page-post-footer-div{
     height: 80px;
