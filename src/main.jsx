@@ -22,7 +22,7 @@ const Router = createBrowserRouter([
     path: "/blog",
     element: <Blog />,
   },
-  { path: "/postpage", element: <PostPage /> },
+  { path: "/postpage/:id", element: <PostPage /> },
   {
     path: "*",
     element: <ErrorPath />,
