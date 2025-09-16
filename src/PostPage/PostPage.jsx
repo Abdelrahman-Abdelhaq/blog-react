@@ -14,10 +14,12 @@ import { useEffect, useState } from "react";
 import MobileList from "../MobileList/MobileList";
 import { picStore } from "../States/PicStore";
 import { userStore } from "../States/UserStore";
+import { useParams } from "react-router";
 const PostPage = () => {
   const pic = picStore((state) => state.pic);
   const [mobileList, setMobileList] = useState(false);
   const username = userStore((state) => state.firstName);
+  const { id } = useParams;
   const openList = () => {
     setMobileList(true);
   };
