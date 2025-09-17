@@ -16,6 +16,8 @@ import { picStore } from "../States/PicStore";
 import { userStore } from "../States/UserStore";
 import { useParams } from "react-router";
 import { postsStore } from "../States/PostsStore";
+import moment from "moment";
+
 const PostPage = () => {
   const pic = picStore((state) => state.pic);
   const [mobileList, setMobileList] = useState(false);
@@ -23,6 +25,7 @@ const PostPage = () => {
   const { id } = useParams();
   const fetchPost = postsStore((state) => state.fetchPost);
   const post = postsStore((state) => state.post);
+  const newDate = moment(post.post_date).format("DD-MMM-YYYY");
 
   const openList = () => {
     setMobileList(true);
@@ -72,7 +75,7 @@ const PostPage = () => {
           <img src={pic} alt="avatar" className="post-page-title-avatar" />
           <p className="post-page-author-name">{username}</p>
           <img src={spacer} alt="spacer" className="post-page-info-spacer" />
-          <p className="post-page-info-date">2nd January,2022</p>
+          <p className="post-page-info-date">{newDate}</p>
         </div>
       </div>
       <Spacer_6 />
