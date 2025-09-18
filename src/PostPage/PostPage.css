@@ -208,8 +208,24 @@ li:hover{
 .new-comment-div{
     display: flex;
     flex-direction: row;
+    position: relative;
     height: 150px;
     width: clamp(280px, 48.7vw, 900px);
+}
+.new-comment-add{
+    position: absolute;
+    right: 4%;
+    bottom: 4%;
+    border: none;
+    background-color: #1E2742;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(12px,1.2vw,18px);
+    height: 34px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 .new-comment-pic{
     width: clamp(24px, 3.9vw, 66px);
@@ -219,9 +235,9 @@ li:hover{
 }
 .new-comment-input{
     padding-left: 16px;
-    padding-bottom: 104px;
+    padding-bottom: 60px;
     margin: 0;
-    height: 148px;
+    height: 100px;
     width: clamp(240px,43.75vw,800px);
     box-sizing: border-box;
     border: none;
@@ -234,7 +250,6 @@ li:hover{
 .mobile-list{
     display: none;
 }
-
 @media screen and (max-width:480px) {
 .post-page-header-div{
     display: none;

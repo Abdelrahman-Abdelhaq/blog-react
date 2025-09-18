@@ -10,13 +10,16 @@ import spacer from "../assets/spacer.svg";
 import post_pic from "../assets/post-pic.svg";
 import { Link } from "react-router";
 import "./PostPage.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MobileList from "../MobileList/MobileList";
 import { picStore } from "../States/PicStore";
 import { userStore } from "../States/UserStore";
 import { useParams } from "react-router";
 import { postsStore } from "../States/PostsStore";
 import moment from "moment";
+import Comment from "../Comment/Comment.jsx";
+import commentStore from "../States/CommentStore.js";
+import { addNewCommentLikeStatus } from "../API/API.js";
 
 const PostPage = () => {
   const pic = picStore((state) => state.pic);
@@ -26,6 +29,17 @@ const PostPage = () => {
   const fetchPost = postsStore((state) => state.fetchPost);
   const post = postsStore((state) => state.post);
   const newDate = moment(post.post_date).format("DD-MMM-YYYY");
+  const comments = commentStore((state) => state.comments);
+  const fetchComments = commentStore((state) => state.fetchComments);
+  const comment = commentStore((state) => state.comment);
+  const setComment = commentStore((state) => state.setComment);
+  const addComment = commentStore((state) => state.addComment);
+  const commentButtonRef = useRef();
+
+  const handleClick = () => {
+    addComment(comment, id);
+    setComment("");
+  };
 
   const openList = () => {
     setMobileList(true);
@@ -44,6 +58,9 @@ const PostPage = () => {
       document.documentElement.classList.remove("overflowY");
     };
   }, [mobileList]);
+  useEffect(() => {
+    fetchComments(id);
+  }, []);
   return (
     <div className="post-page-main-div" id="post_page">
       <button className="open-mobile-list" onClick={openList}></button>
@@ -105,14 +122,34 @@ const PostPage = () => {
           <p className="comment-invitation">Join the conversation</p>
         </div>
         <div className="new-comment-div">
+          <button
+            className="new-comment-add"
+            onClick={handleClick}
+            ref={commentButtonRef}
+          >
+            Comment
+          </button>
           <img src={pic} alt="avatar" className="new-comment-pic" />
           <input
             type="text"
             placeholder="Comments"
             className="new-comment-input"
+            value={comment}
+            onChange={(e) => {
+              setComment(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                commentButtonRef.current.click();
+              }
+            }}
           />
         </div>
-        <div className="comment"></div>
+        {comments
+          ? comments.map((comment) => (
+              <Comment key={comment.comment_id} comment={comment} />
+            ))
+          : null}
       </div>
       <Spacer_10 />
     </div>
