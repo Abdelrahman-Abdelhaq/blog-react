@@ -29,6 +29,15 @@ export const getPost = async (id) => {
     }
 }
 
+export const getComments = async(id) => {
+    try {
+        const res = await axiosClient.get(`/postpage/${id}`)
+        return res.data
+    } catch (err) {
+        console.error(`${err} at getcomments api starting from line 32`)
+    }
+}
+
 export const removePost = async (post_id) =>{
     const res = await axiosClient.delete(`/posts/${post_id}`)
 }
@@ -41,6 +50,17 @@ export const addNewPost = async(category,title,desc,para) => {
         post_paragraph:para
     });
     return res.data;
+}
+
+export const addNewComment = async(para,id) => {
+    try {
+        const res = await axiosClient.post(`/postpage/${id}`,{
+            comment_paragraph:para
+        })
+        return res.data
+    } catch (err) {
+        console.error(`${err} at addnewcomment api from line 54`)
+    }
 }
 
 export const editPost = async (category,title,desc,id) => {
