@@ -13,12 +13,6 @@ const commentStore = create((set) => ({
         const data = await addNewComment(para,id)
         set((state) => ({comments: [...state.comments,data]}))
     },
-    addingCommentLikeStatus: async(id) => {
-        const data = await addNewCommentLikeStatus(id)
-        set((state) => ({
-            commentId: state.commentId+1
-        }))
-    }
 }))
 
 
