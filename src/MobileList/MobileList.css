@@ -13,6 +13,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
+       
     }
 .mobile-list {
     box-sizing: border-box;
@@ -29,6 +30,7 @@
     background-color: white;
     border-radius: 12px 0 0 12px;
     box-shadow: grey 0 0 10px 2px;
+    z-index: 1;
 }
 
 .mobile-brand {
