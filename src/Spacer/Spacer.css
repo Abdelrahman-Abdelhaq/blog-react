@@ -19,7 +19,7 @@
 }
 .spacer-5 {
     width: 100%;
-    height: clamp(30px,15.42vw,240px);
+    height: clamp(30px,10.42vw,240px);
 }
 .spacer-6 {
     width: 100%;
@@ -39,5 +39,5 @@
 }
 .spacer-10 {
     width: 100%;
-    height: clamp(140px,34.5vw,500px);
+    height: clamp(50px,10.5vw,100px);
 }
