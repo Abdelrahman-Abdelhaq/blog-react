@@ -8,13 +8,20 @@ const Login = () => {
   const isPass = loginStore((state) => state.isPass);
   const setIsPass = loginStore((state) => state.setIsPass);
   const lEmail = loginStore((state) => state.lEmail);
-  const setLEmail = loginStore((state) => state.SetLEmail);
+  const setLEmail = loginStore((state) => state.setLEmail);
   const lPassword = loginStore((state) => state.lPassword);
   const setLPassword = loginStore((state) => state.setLPassword);
+  const isLogged = loginStore((state) => state.isLogged);
+  const setIsLogged = loginStore((state) => state.setIsLogged);
+  const userLoginAPI = loginStore((state) => state.userLoginAPI);
 
+  const handleLogin = () => {
+    userLoginAPI(lEmail, lPassword);
+  };
   return (
     <div className="desktop-login-main-container">
       <div className="login-left-subcontainer">
+        {isLogged ? <p>Logged in </p> : null}
         <img src={signin} alt="Phono Prototype" className="login-phone-pic" />
       </div>
       <div className="login-right-subcontainer">
@@ -65,12 +72,7 @@ const Login = () => {
           <button className="login-forget-btn">Forgot Password</button>
         </div>
         <div className="login-signin-div">
-          <button
-            className="login-signin-btn"
-            onClick={() => {
-              console.log("stop Hitting me Moron!");
-            }}
-          >
+          <button className="login-signin-btn" onClick={handleLogin}>
             Sign in
           </button>
         </div>
