@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { addNewComment, addNewCommentLikeStatus, getComments } from "../API/API";
+import { addNewComment, getComments } from "../API/API";
 
 const commentStore = create((set) => ({
     comments:[],

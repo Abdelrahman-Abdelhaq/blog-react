@@ -5,5 +5,6 @@ export const picStore = create((set)=>({
     cover: "/cover.jpg",
     err: "/error.svg",
     upvote: "/upvote.svg",
-    upvoted: "/upvoted.svg"
+    upvoted: "/upvoted.svg",
+    signups: "/signups.svg"
 }))
