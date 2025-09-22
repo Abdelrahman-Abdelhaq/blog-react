@@ -19,7 +19,6 @@ import { postsStore } from "../States/PostsStore";
 import moment from "moment";
 import Comment from "../Comment/Comment.jsx";
 import commentStore from "../States/CommentStore.js";
-import { addNewCommentLikeStatus } from "../API/API.js";
 
 const PostPage = () => {
   const pic = picStore((state) => state.pic);
