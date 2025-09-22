@@ -72,6 +72,14 @@ export const addNewUser = async(name,mail,pass) => {
     return res.status
 }
 
+export const userLoginRequest = async(mail,pass) => {
+    const res = await axiosClient.post('/' ,{
+        mail:mail,
+        pass:pass
+    })
+    return res.status
+}
+
 export const editPost = async (category,title,desc,id) => {
     const res = await axiosClient.put(`/posts/${id}`,{
         post_category:category,
