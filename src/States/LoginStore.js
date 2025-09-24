@@ -2,6 +2,10 @@ import { create } from "zustand";
 import { userLoginRequest } from "../API/API";
 
 export const loginStore = create((set,get) => ({
+    isEF:null,
+    setEF:(value) => set({isEF:value}),
+    isPF:null,
+    setPF:(value) => set({isPF:value}),
     isEmailErr:null,
     isPassErr:null,
     setIsEErr: (value) => set({isEmailErr:value}),
