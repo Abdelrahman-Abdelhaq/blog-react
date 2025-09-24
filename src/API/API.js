@@ -74,11 +74,17 @@ export const addNewUser = async(name,mail,pass) => {
 }
 
 export const userLoginRequest = async(mail,pass) => {
-    const res = await axiosClient.post('/' ,{
+    try {
+        const res = await axiosClient.post('/' ,{
         mail:mail,
         pass:pass
     })
     return res
+    } catch (err) {
+        if (err.response){
+            return err.response
+        }
+    }
 }
 
 export const editPost = async (category,title,desc,id) => {
