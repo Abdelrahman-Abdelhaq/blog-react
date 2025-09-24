@@ -113,7 +113,14 @@ const Signup = () => {
               <p className="signup-desktop-signin-p">
                 Already have an account!?
               </p>
-              <Link to={"/"}>
+              <Link
+                to={"/"}
+                onClick={() => {
+                  setSUName("");
+                  setSUMail("");
+                  setSUPass("");
+                }}
+              >
                 <button className="signup-desktop-signin-btn">Sign-in</button>
               </Link>
             </div>
