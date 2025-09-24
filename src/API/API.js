@@ -16,6 +16,7 @@ export const getPosts = async (offset,limit) => {
     return res.data
     } catch (error) {
         alert("Server Error, now you are seeing Dummy Data!")
+        console.error(error)
       return  dummy 
     }
 }
@@ -77,7 +78,7 @@ export const userLoginRequest = async(mail,pass) => {
         mail:mail,
         pass:pass
     })
-    return res.status
+    return res
 }
 
 export const editPost = async (category,title,desc,id) => {
