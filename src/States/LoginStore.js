@@ -2,6 +2,10 @@ import { create } from "zustand";
 import { userLoginRequest } from "../API/API";
 
 export const loginStore = create((set,get) => ({
+    isEmailErr:null,
+    isPassErr:null,
+    setIsEErr: (value) => set({isEmailErr:value}),
+    setIsPErr: (value) => set({isPassErr:value}),
     isLogged: null,
     setIsLogged: (value) => set({isLogged:value}),
     isPass:'password',
@@ -12,9 +16,14 @@ export const loginStore = create((set,get) => ({
     setLPassword:(value) => set({lPassword:value}),
     userLoginAPI: async(mail,pass) => {
         const data = await userLoginRequest(mail,pass)
-        console.log(data.data.token)
         if(data.status === 200 ){
             set({isLogged: true})
+        }
+        else if(data.status === 401){
+            set({isPassErr: "UnAuthorized Access!"})
+        }
+        else if(data.status === 500){
+            set({isEmailErr: "Email is not Registred, Please Create New Account!"})
         }
     },
 }))
