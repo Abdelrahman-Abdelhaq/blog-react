@@ -58,6 +58,7 @@ html,body{
     display: flex;
     flex-direction: column;
     align-items: start;
+    position: relative;
 }
 .login-email-p {
     margin-top: 0;
@@ -227,6 +228,21 @@ html,body{
     font-weight: 800;
     padding: 0;
     background-color: white;
+}
+.is-error{
+    color: red;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    position: absolute;
+    background: transparent;
+    top: 112%;
+    margin: 0;
+
 }
 
 /* First Media Query for Medium Devices .............

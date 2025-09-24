@@ -14,6 +14,10 @@ const Login = () => {
   const isLogged = loginStore((state) => state.isLogged);
   const setIsLogged = loginStore((state) => state.setIsLogged);
   const userLoginAPI = loginStore((state) => state.userLoginAPI);
+  const isEmailErr = loginStore((state) => state.isEmailErr);
+  const isPassErr = loginStore((state) => state.isPassErr);
+  const setIsEErr = loginStore((state) => state.setIsEErr);
+  const setIsPErr = loginStore((state) => state.setIsPErr);
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -42,6 +46,7 @@ const Login = () => {
             <p className="login-request">Please login your account</p>
           </div>
           <div className="login-email-div">
+            {isEmailErr ? <p className="is-error">{isEmailErr}</p> : null}
             <p className="login-email-p">Email</p>
             <input
               type="email"
@@ -50,10 +55,12 @@ const Login = () => {
               value={lEmail}
               onChange={(e) => {
                 setLEmail(e.target.value);
+                setIsEErr(null);
               }}
             />
           </div>
           <div className="login-password-div">
+            {isPassErr ? <p className="is-error">{isPassErr}</p> : null}
             <p className="login-password-p">Password</p>
             <input
               type={isPass}
@@ -62,6 +69,7 @@ const Login = () => {
               value={lPassword}
               onChange={(e) => {
                 setLPassword(e.target.value);
+                setIsPErr(null);
               }}
             />
             <button
