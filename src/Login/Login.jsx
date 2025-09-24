@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import "./Login.css";
 import or_spacer from "../assets/or_spacer.svg";
 import { loginStore } from "../States/LoginStore";
+import { useRef } from "react";
 
 const Login = () => {
   const isPass = loginStore((state) => state.isPass);
@@ -18,11 +19,17 @@ const Login = () => {
   const isPassErr = loginStore((state) => state.isPassErr);
   const setIsEErr = loginStore((state) => state.setIsEErr);
   const setIsPErr = loginStore((state) => state.setIsPErr);
+  const signInRef = useRef();
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    if (lEmail === "" || lPassword === "") {
-      alert("Please Fill Email and Password to Login");
+    if (lEmail === "" && lPassword === "") {
+      setIsEErr("Please Fill in Your Email!");
+      setIsPErr("Please Fill in Your Password!");
+    } else if (lEmail === "") {
+      setIsEErr("Please Fill in Your Email!");
+    } else if (lPassword === "") {
+      setIsPErr("Please Fill in Your Password!");
     } else {
       const data = await userLoginAPI(lEmail, lPassword);
     }
@@ -57,6 +64,11 @@ const Login = () => {
                 setLEmail(e.target.value);
                 setIsEErr(null);
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  signInRef.current.click();
+                }
+              }}
             />
           </div>
           <div className="login-password-div">
@@ -70,6 +82,11 @@ const Login = () => {
               onChange={(e) => {
                 setLPassword(e.target.value);
                 setIsPErr(null);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  signInRef.current.click();
+                }
               }}
             />
             <button
@@ -87,7 +104,11 @@ const Login = () => {
             <button className="login-forget-btn">Forgot Password</button>
           </div>
           <div className="login-signin-div">
-            <button className="login-signin-btn" onClick={handleLogin}>
+            <button
+              className="login-signin-btn"
+              onClick={handleLogin}
+              ref={signInRef}
+            >
               Sign in
             </button>
           </div>
