@@ -22,10 +22,6 @@ const Login = () => {
   const setIsPErr = loginStore((state) => state.setIsPErr);
   const emailRegex = regexStore((state) => state.emailRegex);
   const passRegex = regexStore((state) => state.passRegex);
-  const isEF = loginStore((state) => state.isEF);
-  const isPF = loginStore((state) => state.isPF);
-  const setEF = loginStore((state) => state.setEF);
-  const setPF = loginStore((state) => state.setPF);
   const signInRef = useRef();
   const navigate = useNavigate();
 
@@ -37,6 +33,10 @@ const Login = () => {
       setIsEErr("Please Fill in Your Email!");
     } else if (lPassword === "") {
       setIsPErr("Please Fill in Your Password!");
+    } else if (!emailRegex.test(lEmail)) {
+      setIsEErr("Please Enter Valid Email !");
+    } else if (!passRegex.test(lPassword)) {
+      setIsPErr("Please Enter Valid Password !");
     } else {
       const data = await userLoginAPI(lEmail, lPassword);
       setIsLogged(null);
@@ -64,19 +64,6 @@ const Login = () => {
           </div>
           <div className="login-email-div">
             {isEmailErr ? <p className="login-is-error">{isEmailErr}</p> : null}
-            {isEF ? (
-              lEmail === "" ? null : emailRegex.test(lEmail) ? null : (
-                <div className="login-email-regex-div">
-                  <p className="login-email-regex">
-                    Email Should Consist of: <br />
-                    Uppercase Letters, <br />
-                    Lowercase Letters, <br />
-                    Special Characters (@, $, !, %, *, ?, &) <br />
-                    and Digits
-                  </p>
-                </div>
-              )
-            ) : null}
             <p className="login-email-p">Email</p>
             <input
               type="email"
@@ -92,30 +79,10 @@ const Login = () => {
                   signInRef.current.click();
                 }
               }}
-              onFocus={() => {
-                setEF(true);
-              }}
-              onBlur={() => {
-                setEF(false);
-              }}
             />
           </div>
           <div className="login-password-div">
             {isPassErr ? <p className="login-is-error">{isPassErr}</p> : null}
-            {isPF ? (
-              lPassword === "" ? null : passRegex.test(lPassword) ? null : (
-                <div className="login-email-regex-div">
-                  <p className="login-email-regex">
-                    Password Should Have at Least: <br />
-                    1 Uppercase Letter, <br />
-                    1 Lowercase Letter, <br />
-                    1 Special Character (@, $, !, %, *, ?, &) <br />
-                    1 Digit, <br />
-                    Password Length Should be 8 or more
-                  </p>
-                </div>
-              )
-            ) : null}
             <p className="login-password-p">Password</p>
             <input
               type={isPass}
@@ -130,12 +97,6 @@ const Login = () => {
                 if (e.key === "Enter") {
                   signInRef.current.click();
                 }
-              }}
-              onFocus={() => {
-                setPF(true);
-              }}
-              onBlur={() => {
-                setPF(false);
               }}
             />
             <button
