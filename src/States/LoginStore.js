@@ -12,10 +12,9 @@ export const loginStore = create((set,get) => ({
     setLPassword:(value) => set({lPassword:value}),
     userLoginAPI: async(mail,pass) => {
         const data = await userLoginRequest(mail,pass)
-        if(data === 200 ){
+        console.log(data.data.token)
+        if(data.status === 200 ){
             set({isLogged: true})
-        }else{
-            set({isLogged:false})
         }
-    }
+    },
 }))
