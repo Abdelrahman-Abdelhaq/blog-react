@@ -65,12 +65,17 @@ export const addNewComment = async(para,id) => {
 }
 
 export const addNewUser = async(name,mail,pass) => {
-    const res = await axiosClient.post('/signup',{
+   try {
+     const res = await axiosClient.post('/signup',{
         user:name,
         mail:mail,
         pass:pass
     })
     return res.status
+   } catch (err) {
+    if(err.response)
+        return err.response.status
+   }
 }
 
 export const userLoginRequest = async(mail,pass) => {
@@ -79,7 +84,7 @@ export const userLoginRequest = async(mail,pass) => {
         mail:mail,
         pass:pass
     })
-    return res
+    return res.status
     } catch (err) {
         if (err.response){
             return err.response
