@@ -229,7 +229,7 @@ html,body{
     padding: 0;
     background-color: white;
 }
-.is-error{
+.login-is-error{
     color: red;
     width: 100%;
     box-sizing: border-box;
@@ -243,6 +243,25 @@ html,body{
     top: 100%;
     margin: 0;
 
+}
+.login-email-regex-div{
+    width: auto;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    position: absolute;
+    top: 120%;
+    z-index: 1;
+    outline: solid 1px rgba(173, 13, 13, 0.433);
+    
+}
+.login-email-regex{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: clamp(12px, 1.4vw, 16px);
+    color: red;
 }
 
 /* First Media Query for Medium Devices .............
