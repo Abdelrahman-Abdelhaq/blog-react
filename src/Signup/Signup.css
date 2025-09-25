@@ -133,7 +133,7 @@ body {
     right: 26px;
     bottom: 14px;
     position: absolute;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 }
 .signup-desktop-signup-div {
