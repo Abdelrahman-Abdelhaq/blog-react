@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { userLoginRequest } from "../API/API";
+import { authStore } from "./AuthStore";
 
 export const loginStore = create((set,get) => ({
     isEmailErr:null,
@@ -15,15 +16,24 @@ export const loginStore = create((set,get) => ({
     lPassword:'',
     setLPassword:(value) => set({lPassword:value}),
     userLoginAPI: async(mail,pass) => {
-        const data = await userLoginRequest(mail,pass)
-        if(data.status === 200 ){
-            set({isLogged: true})
+        const res = await userLoginRequest(mail,pass)
+
+        if(res.status === 200 && res.payload?.accessToken){
+            authStore.getState().setAuth(
+                res.payload.user,
+                res.payload.accessToken,
+                res.payload.refreshToken
+            )
+            set({isLogged:true})
         }
-        else if(data.status === 401){
-            set({isPassErr: "UnAuthorized Access!"})
-        }
-        else if(data.status === 500){
-            set({isEmailErr: "Email is not Registred, Please Create New Account!"})
+        else if (res.status === 401) {
+            set({ isPassErr: "Unauthorized Access!" });
+        } else if (res.status === 404) {
+            set({ isEmailErr: "Email is not Registered, Please Create New Account!" });
+        } else if (res.status === 0) {
+            set({ isEmailErr: "Network Error. Please try again later." });
+        } else {
+            set({ isEmailErr: "Unexpected error occurred." });
         }
     },
 }))
