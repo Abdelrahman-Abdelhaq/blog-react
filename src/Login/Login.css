@@ -108,7 +108,7 @@ html,body{
     position: absolute;
     right: 26px;
     bottom: 14px;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 }
 .login-forget-pass-div {
