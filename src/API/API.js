@@ -80,15 +80,13 @@ export const addNewUser = async(name,mail,pass) => {
 
 export const userLoginRequest = async(mail,pass) => {
     try {
-        const res = await axiosClient.post('/' ,{
-        mail:mail,
-        pass:pass
-    })
-    return res.status
+        const res = await axiosClient.post('/' ,{mail,pass})
+    return {status: res.status , payload: res.data}
     } catch (err) {
         if (err.response){
-            return err.response
+            return {status: err.response.status , payload: err.response.data}
         }
+        return {status: 0 , payload: {message:"Server Error"}}
     }
 }
 
