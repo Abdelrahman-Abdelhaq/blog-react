@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <div className="desktop-login-main-container">
       <div className="login-left-subcontainer">
-        <img src={signin} alt="Phono Prototype" className="login-phone-pic" />
+        <img src={signin} alt="Phone Prototype" className="login-phone-pic" />
       </div>
       {isLogged ? (
         navigate("/blog")
