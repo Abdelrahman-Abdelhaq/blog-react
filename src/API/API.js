@@ -1,14 +1,43 @@
 import axios from "axios";
 import dummy from "./dummy";
+import { authStore } from "../States/AuthStore";
 
-const axiosClient = axios.create({
-    baseURL:"http://localhost:3000",
+export const axiosClient = axios.create({
+    baseURL:import.meta.env.VITE_backend_url,
     headers: {
         'Content-Type': 'application/json'
     }
 });
 
+axiosClient.interceptors.request.use((config) => {
+  const token = authStore.getState().accessToken;
+  if (token) {
+    config.headers.authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
+axiosClient.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    console.error("Interceptor caught error:", {
+      url: error.config?.url,
+      status: error.response?.status,
+      data: error.response?.data
+    });
+
+    if (error.response?.status === 403) {
+      console.warn("Access token expired. Attempting refresh...");
+      const newToken = await refreshAccessToken();
+      if (newToken) {
+        error.config.headers.authorization = `Bearer ${newToken}`;
+        return axiosClient(error.config);
+      }
+    }
+
+    return Promise.reject(error);
+  }
+);
 
 export const getPosts = async (offset,limit) => {
     try {
@@ -49,7 +78,7 @@ export const addNewPost = async(category,title,desc,para) => {
         post_title:title,
         post_description:desc,
         post_paragraph:para
-    });
+    },{headers:{authorization:`Bearer ${authStore.getState().accessToken}`}});
     return res.data;
 }
 
@@ -60,7 +89,7 @@ export const addNewComment = async(para,id) => {
         })
         return res.data
     } catch (err) {
-        console.error(`${err} at addnewcomment api from line 54`)
+        console.error(`${err} at addnewcomment api from line 57`)
     }
 }
 
@@ -98,3 +127,25 @@ export const editPost = async (category,title,desc,id) => {
     })
     return res.data
 }
+
+export const refreshAccessToken = async () => {
+  try {
+    const refreshToken = authStore.getState().refreshToken;
+    if (!refreshToken) return null;
+
+    const res = await axiosClient.post("/refresh", {
+      refreshToken,
+    });
+
+    const newAccessToken = res.data.accessToken;
+    authStore.getState().setAccessToken(newAccessToken);
+
+    return newAccessToken;
+  } catch (error) {
+    console.error("Failed to refresh token:", error);
+    authStore.getState().setAccessToken(null);
+    authStore.getState().setRefreshToken(null);
+    window.location.href = "/";
+    return null;
+  }
+};
