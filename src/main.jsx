@@ -7,6 +7,10 @@ import Signup from "./Signup/Signup.jsx";
 import Blog from "./Blog/Blog.jsx";
 import PostPage from "./PostPage/PostPage.jsx";
 import ErrorPath from "./404/ErrorPath.jsx";
+import { authStore } from "./States/AuthStore.js";
+import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes.jsx";
+
+authStore.getState().loadAuthFromStorage();
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -19,9 +23,20 @@ const Router = createBrowserRouter([
   },
   {
     path: "/blog",
-    element: <Blog />,
+    element: (
+      <ProtectedRoutes>
+        <Blog />
+      </ProtectedRoutes>
+    ),
   },
-  { path: "/postpage/:id", element: <PostPage /> },
+  {
+    path: "/postpage/:id",
+    element: (
+      <ProtectedRoutes>
+        <PostPage />
+      </ProtectedRoutes>
+    ),
+  },
   {
     path: "*",
     element: <ErrorPath />,

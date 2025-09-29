@@ -4,6 +4,9 @@ export const authStore = create((set) => ({
     user:null,
     accessToken:null,
     refreshToken:null,
+    setAccessToken: (token) => set({ accessToken: token }),
+    setRefreshToken: (token) => set({ refreshToken: token }),
+    clearTokens: () => set({ accessToken: null, refreshToken: null }),
     setAuth: (user,accessToken,refreshToken) => {
         localStorage.setItem('user',JSON.stringify(user))
         localStorage.setItem('accessToken',accessToken)

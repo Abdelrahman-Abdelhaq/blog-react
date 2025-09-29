@@ -1,5 +1,6 @@
 import ProfileModalEdit from "../ProfileModalEdit/ProfileModalEdit";
 import ProfileModalInfo from "../ProfileModalInfo/ProfileModalInfo";
+import Signout from "../Signout/Signout";
 import { picStore } from "../States/PicStore";
 import { profileStore } from "../States/ProfileStore";
 import { userStore } from "../States/UserStore";
@@ -15,6 +16,7 @@ const ProfileModal = () => {
     <div className="profile-modal-background" aria-modal="true">
       <div className="profile-modal">
         <div className="profile-modal-header">
+          <Signout></Signout>
           <img src={pic} alt="profile-picture" className="profile-modal-pic" />
         </div>
         {isInfo ? (

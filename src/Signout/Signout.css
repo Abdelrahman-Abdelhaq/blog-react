@@ -1,0 +1,13 @@
+.logout-icon{
+    color: white;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 4px;
+    top: 4px;
+    cursor: pointer;
+    transition: .4s ease;
+}
+.logout-icon:hover{
+    color: red;
+}
