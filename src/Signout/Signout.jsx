@@ -17,6 +17,7 @@ const Signout = () => {
     navigate("/");
     setIsInfo(false);
     setIsEdit(false);
+    document.documentElement.classList.remove("overflowY");
   };
   return (
     <LogoutIcon className="logout-icon" onClick={handleClick}></LogoutIcon>

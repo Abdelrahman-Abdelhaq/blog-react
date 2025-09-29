@@ -10,7 +10,7 @@ import React from "react";
 
 const ProfileModal = () => {
   const { pic } = picStore();
-  const { isInfo, isEdit, setIsInfo, setIsEdit } = profileStore();
+  const { isInfo, isEdit } = profileStore();
 
   return (
     <div className="profile-modal-background" aria-modal="true">
