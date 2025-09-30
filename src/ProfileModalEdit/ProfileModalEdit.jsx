@@ -1,33 +1,27 @@
+import { authStore } from "../States/AuthStore";
+import { editStore } from "../States/EditStore";
 import { profileStore } from "../States/ProfileStore";
-import { userStore } from "../States/UserStore";
 import "./ProfileModalEdit.css";
 
 const ProfileModalEdit = () => {
   const setIsInfo = profileStore((state) => state.setIsInfo);
   const setIsEdit = profileStore((state) => state.setIsEdit);
-  const firstName = userStore((state) => state.firstName);
-  const lastName = userStore((state) => state.lastName);
-  const email = userStore((state) => state.email);
-  const setFirstName = userStore((state) => state.setFirstName);
-  const setLastName = userStore((state) => state.setLastName);
-  const setEmail = userStore((state) => state.setEmail);
-  const editFirst = userStore((state) => state.editFirst);
-  const editLast = userStore((state) => state.editLast);
-  const editEmail = userStore((state) => state.editEmail);
-  const setEditFirst = userStore((state) => state.setEditFirst);
-  const setEditLast = userStore((state) => state.setEditLast);
-  const setEditEmail = userStore((state) => state.setEditEmail);
+  const userName = authStore((state) => state.user.name);
+  const editName = editStore((state) => state.editName);
+  const setEName = editStore((state) => state.setEName);
+  const mail = authStore((state) => state.user.email);
+  const editMail = editStore((state) => state.editMail);
+  const setEMail = editStore((state) => state.setEMail);
+
   const handleInfo = () => {
     setIsEdit(false);
     setIsInfo(true);
   };
   const handleApply = () => {
-    setFirstName(editFirst == "" ? firstName : editFirst);
-    setLastName(editLast == "" ? lastName : editLast);
-    setEmail(editEmail == "" ? email : editEmail);
-    setEditFirst("");
-    setEditLast("");
-    setEditEmail("");
+    // setFirstName(editFirst == "" ? firstName : editFirst);
+    // setEmail(editEmail == "" ? email : editEmail);
+    // setEditFirst("");
+    // setEditEmail(""); functionality yet to be added
     setIsEdit(false);
     document.documentElement.classList.remove("overflowY");
   };
@@ -37,21 +31,10 @@ const ProfileModalEdit = () => {
         <input
           type="text"
           className="profile-modal-edit-input"
-          placeholder={firstName}
-          value={editFirst}
+          placeholder={userName}
+          value={editName}
           onChange={(e) => {
-            setEditFirst(e.target.value);
-          }}
-        />
-      </div>
-      <div className="profile-modal-edit-lastname">
-        <input
-          type="text"
-          className="profile-modal-edit-input"
-          placeholder={lastName}
-          value={editLast}
-          onChange={(e) => {
-            setEditLast(e.target.value);
+            setEName(e.target.value);
           }}
         />
       </div>
@@ -59,10 +42,10 @@ const ProfileModalEdit = () => {
         <input
           type="text"
           className="profile-modal-edit-input"
-          placeholder={email}
-          value={editEmail}
+          placeholder={mail}
+          value={editMail}
           onChange={(e) => {
-            setEditEmail(e.target.value);
+            setEMail(e.target.value);
           }}
         />
       </div>

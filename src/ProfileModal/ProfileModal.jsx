@@ -3,9 +3,7 @@ import ProfileModalInfo from "../ProfileModalInfo/ProfileModalInfo";
 import Signout from "../Signout/Signout";
 import { picStore } from "../States/PicStore";
 import { profileStore } from "../States/ProfileStore";
-import { userStore } from "../States/UserStore";
 import "./ProfileModal.css";
-
 import React from "react";
 
 const ProfileModal = () => {

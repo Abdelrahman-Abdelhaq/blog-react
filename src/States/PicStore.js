@@ -1,7 +1,7 @@
 import {create} from "zustand"
 
 export const picStore = create((set)=>({
-    pic: "/profPic.jpg",
+    pic: "/avatar.svg",
     cover: "/cover.jpg",
     err: "/error.svg",
     upvote: "/upvote.svg",

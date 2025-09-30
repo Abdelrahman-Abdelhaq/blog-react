@@ -4,13 +4,13 @@ import { Link } from "react-router";
 import moment from "moment";
 // import EditButton from "../EditButton/EditButton";
 import { picStore } from "../States/PicStore";
-import { userStore } from "../States/UserStore";
 import { postsStore } from "../States/PostsStore";
+import { authStore } from "../States/AuthStore";
 
 const Post = ({ id }) => {
   const posts = postsStore((state) => state.posts);
   const post = posts.find((p) => p.post_id === id);
-  const firstName = userStore((state) => state.firstName);
+  const userName = authStore.getState().user.name;
   const profilePic = picStore((state) => state.pic);
   const newDate = moment(post.post_date).format("DD-MMM-YYYY");
   const deletePost = postsStore((state) => state.deletePost);
@@ -38,7 +38,7 @@ const Post = ({ id }) => {
         <div className="content-info">
           <img src={profilePic} alt="avatar" className="content-avatar" />
           <div className="content-data">
-            <p className="content-author">{`${firstName}`}</p>
+            <p className="content-author">{`${userName}`}</p>
             <p className="content-date">{newDate}</p>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import "./ProfileModalInfo.css";
-import { userStore } from "../States/UserStore";
 import { profileStore } from "../States/ProfileStore";
+import { authStore } from "../States/AuthStore";
 const ProfileModalInfo = () => {
-  const { firstName, lastName, email } = userStore();
+  const userName = authStore.getState().user.name;
+  const email = authStore.getState().user.email;
   const { setIsInfo, setIsEdit } = profileStore();
   const closeRef = useRef(null);
   const editRef = useRef(null);
@@ -22,7 +23,7 @@ const ProfileModalInfo = () => {
   return (
     <>
       <div className="profile-modal-username">
-        <p className="profile-modal-username-p">{`${firstName} ${lastName}`}</p>
+        <p className="profile-modal-username-p">{`${userName}`}</p>
       </div>
       <div className="profile-modal-email">
         <p className="profile-modal-email-p">{email}</p>

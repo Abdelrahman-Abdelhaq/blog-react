@@ -8,7 +8,7 @@
     z-index: 1;
 }
 .profile-modal{
-    height: 360px;
+    height: 320px;
     width: clamp(280px,19.5vw,320px);
     background-color: white;
     box-shadow: gray 0 0 10px 2px;
@@ -21,7 +21,7 @@
     top: 10%;
 }
 .profile-modal-header{
-    height: 100px;
+    height: 80px;
     width: 100%;
     background-image: linear-gradient(to bottom right,rgb(111, 27, 237),rgb(65, 13, 77));
     border-top-left-radius: 12px;
@@ -34,5 +34,6 @@
     border-radius: 50%;
     border: 2px solid white;
     position: relative;
-    top: 56%;
+    top: 50%;
+    background-color: white;
 }

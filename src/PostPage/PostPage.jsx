@@ -13,17 +13,17 @@ import "./PostPage.css";
 import { useEffect, useRef, useState } from "react";
 import MobileList from "../MobileList/MobileList";
 import { picStore } from "../States/PicStore";
-import { userStore } from "../States/UserStore";
 import { useParams } from "react-router";
 import { postsStore } from "../States/PostsStore";
 import moment from "moment";
 import Comment from "../Comment/Comment.jsx";
 import commentStore from "../States/CommentStore.js";
+import { authStore } from "../States/AuthStore.js";
 
 const PostPage = () => {
   const pic = picStore((state) => state.pic);
   const [mobileList, setMobileList] = useState(false);
-  const username = userStore((state) => state.firstName);
+  const userName = authStore.getState().user.name;
   const { id } = useParams();
   const fetchPost = postsStore((state) => state.fetchPost);
   const post = postsStore((state) => state.post);
@@ -89,7 +89,7 @@ const PostPage = () => {
         </div>
         <div className="post-page-title-info">
           <img src={pic} alt="avatar" className="post-page-title-avatar" />
-          <p className="post-page-author-name">{username}</p>
+          <p className="post-page-author-name">{userName}</p>
           <img src={spacer} alt="spacer" className="post-page-info-spacer" />
           <p className="post-page-info-date">{newDate}</p>
         </div>
@@ -109,7 +109,7 @@ const PostPage = () => {
         </div>
         <div className="post-page-footer-info">
           <p className="post-page-footer-written">Written by</p>
-          <p className="post-page-footer-author">{username}</p>
+          <p className="post-page-footer-author">{userName}</p>
           <p className="post-page-footer-job">CEO Team App</p>
         </div>
       </div>
